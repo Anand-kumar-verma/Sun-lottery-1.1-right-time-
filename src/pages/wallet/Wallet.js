@@ -20,7 +20,7 @@ import sunlotteryhomebanner from "../../assets/sunlotteryhomebanner.jpg";
 function Wallet() {
   const isMediumScreen = useMediaQuery({ minWidth: 800 });
   const navigate = useNavigate();
-  const [openDialogBoxHomeBanner, setopenDialogBoxHomeBanner] = React.useState(true);
+  const [openDialogBoxHomeBanner, setopenDialogBoxHomeBanner] = React.useState(false);
   const { isLoading, data } = useQuery(["myprofile"], () => MyProfileDataFn(), {
     refetchOnMount: false,
     refetchOnReconnect: true,
