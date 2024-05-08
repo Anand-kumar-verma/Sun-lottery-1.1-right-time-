@@ -17,12 +17,7 @@ import sunlotteryhomebanner from "../../assets/sunlotteryhomebanner.jpg";
 import { useState } from "react";
 
 function Activity() {
-  const navigate = useNavigate();
   const [openDialogBoxHomeBanner, setopenDialogBoxHomeBanner] = useState(true);
-
-  const goBack = () => {
-    navigate(-1);
-  };
 
   const game_data = [
     {
