@@ -14,7 +14,7 @@ import { useEffect, useState } from "react";
 import { useQuery, useQueryClient } from "react-query";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import CustomCircularProgress from "../../Shared/CustomCircularProgress";
-import { zubgback, zubgbackgrad, zubgmid, zubgshadow, zubgtext, zubgwhite } from "../../Shared/color";
+import { zubgback, zubgbackgrad, zubggray, zubgmid, zubgshadow, zubgtext, zubgwhite } from "../../Shared/color";
 import cip from "../../assets/cip.png";
 import dp1 from "../../assets/images/pr.png";
 import dp2 from "../../assets/dp2.png";
@@ -26,22 +26,25 @@ import casino from "../../assets/images/casino.png";
 import customer from "../../assets/images/customer-service.png";
 import dpt from "../../assets/images/wallet (3).png";
 import edit from "../../assets/images/banking.png";
-import gift from "../../assets/images/gift-box.png";
-import graph from "../../assets/images/graph.png";
+import gift from "../../assets/images/gift-box-with-a-bow.png";
+import graph from "../../assets/images/graph (1).png";
 import hand from "../../assets/images/hand.png";
-import notification from "../../assets/images/notification.png";
+import notification from "../../assets/images/notification (1).png";
+import notification1 from "../../assets/images/notification.png";
 import user2 from "../../assets/images/password (1).png";
 import Rank from "../../assets/images/rank.png";
 import namer from "../../assets/images/namer.png";
 import balance from "../../assets/images/send.png";
 import setting from "../../assets/images/settings (1).png";
-import trans from "../../assets/images/translation.png";
+import trans from "../../assets/images/translate.png";
 import s from "../../assets/images/wallet (1).png";
 import sunlotteryhomebanner from "../../assets/sunlotteryhomebanner.jpg";
 import Layout from "../../component/Layout/Layout";
 import { MyProfileDataFn } from "../../services/apicalling";
 import axios from "axios";
 import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
+import bgms from "../../assets/images/playgame.jpg";
+
 
 
 function Account() {
@@ -244,7 +247,6 @@ function Account() {
           <Stack
             sx={{
               padding: "10px",
-              background: zubgtext,
               width: "100%",
               borderRadius: "10px",
             }}
@@ -254,7 +256,7 @@ function Account() {
               to="/notification"
               direction="row"
               sx={{
-                borderBottom: "1px solid white",
+                borderBottom: `1px solid ${zubgtext}`,
                 padding: "10px",
                 width: "100%",
                 alignItems: "center",
@@ -270,14 +272,14 @@ function Account() {
                 <Typography
                   variant="body1"
                   color="initial"
-                  sx={{ color: "white", fontSize: "13px", fontWeight: "600" }}
+                  sx={{ color: zubgtext, fontSize: "13px", fontWeight: "600" }}
                 >
                   Notification
                 </Typography>
               </Stack>
               <Box>
                 <KeyboardDoubleArrowRightIcon
-                  sx={{ color: "white", fontSize: "23px", fontWeight: "600" }}
+                  sx={{ color: zubgtext, fontSize: "23px", fontWeight: "600" }}
                 />
               </Box>
             </Stack>
@@ -286,7 +288,7 @@ function Account() {
               to="/gift"
               direction="row"
               sx={{
-                borderBottom: "1px solid white",
+                borderBottom: `1px solid ${zubgtext}`,
                 padding: " 10px 10px 10px 5px",
                 width: "100%",
                 alignItems: "center",
@@ -302,14 +304,14 @@ function Account() {
                 <Typography
                   variant="body1"
                   color="initial"
-                  sx={{ color: "white", fontSize: "13px", fontWeight: "600" }}
+                  sx={{ color: zubgtext, fontSize: "13px", fontWeight: "600" }}
                 >
                   Gifts
                 </Typography>
               </Stack>
               <Box>
                 <KeyboardDoubleArrowRightIcon
-                  sx={{ color: "white", fontSize: "23px", fontWeight: "600" }}
+                  sx={{ color: zubgtext, fontSize: "23px", fontWeight: "600" }}
                 />
               </Box>
             </Stack>
@@ -318,7 +320,7 @@ function Account() {
               to="/gamestaticks"
               direction="row"
               sx={{
-                borderBottom: "1px solid white",
+                borderBottom: `1px solid ${zubgtext}`,
                 padding: " 10px 10px 10px 5px",
                 width: "100%",
                 alignItems: "center",
@@ -334,14 +336,14 @@ function Account() {
                 <Typography
                   variant="body1"
                   color="initial"
-                  sx={{ color: "white", fontSize: "13px", fontWeight: "600" }}
+                  sx={{ color: zubgtext, fontSize: "13px", fontWeight: "600" }}
                 >
                   Game statistics
                 </Typography>
               </Stack>
               <Box>
                 <KeyboardDoubleArrowRightIcon
-                  sx={{ color: "white", fontSize: "23px", fontWeight: "600" }}
+                  sx={{ color: zubgtext, fontSize: "23px", fontWeight: "600" }}
                 />
               </Box>
             </Stack>
@@ -350,7 +352,7 @@ function Account() {
               to="/Language"
               direction="row"
               sx={{
-                borderBottom: "1px solid white",
+                borderBottom: `1px solid ${zubgtext}`,
                 padding: " 10px 10px 10px 5px",
                 width: "100%",
                 alignItems: "center",
@@ -366,14 +368,14 @@ function Account() {
                 <Typography
                   variant="body1"
                   color="initial"
-                  sx={{ color: "white", fontSize: "13px", fontWeight: "600" }}
+                  sx={{ color: zubgtext, fontSize: "13px", fontWeight: "600" }}
                 >
                   Language
                 </Typography>
               </Stack>
               <Box>
                 <Typography
-                  sx={{ color: "white", fontSize: "13px", fontWeight: "500" }}
+                  sx={{ color: zubgtext, fontSize: "13px", fontWeight: "500" }}
                 >
                   English
                 </Typography>
@@ -412,7 +414,7 @@ function Account() {
               {
                 to: "/gameNotification",
                 name: "Notification",
-                logo: notification,
+                logo: notification1,
               },
               {
                 to: "/SettingCenter/LoginPassword",
@@ -541,7 +543,9 @@ const style = {
   },
   rankImage: { width: "100px", height: "100px" },
   balanceContainer: {
-    background: zubgmid,
+    backgroundImage: `url(${bgms})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '100% 100%',
     borderRadius: "10px",
     padding: "20px",
     width: "95%",
@@ -564,8 +568,6 @@ const style = {
   cardImage: { width: "50px" },
   cardNumber: { fontSize: "14px", color: "white", marginLeft: "10px" },
   actionContainer: {
-    background: zubgwhite,
-    boxShadow: zubgshadow,
     borderRadius: "10px",
     padding: "10px",
     width: "95%",

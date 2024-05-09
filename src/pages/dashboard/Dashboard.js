@@ -2,6 +2,7 @@ import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
 import FitbitIcon from "@mui/icons-material/Fitbit";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import TelegramIcon from "@mui/icons-material/Telegram";
+import bgms from "../../assets/images/bgms1.png";
 import {
   Avatar,
   Box,
@@ -31,7 +32,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { checkTokenValidity } from "../../Shared/CookieStorage";
 import CustomCircularProgress from "../../Shared/CustomCircularProgress";
-import { gray, zubgback, zubgbackgrad, zubgmid, zubgshadow, zubgtext, zubgwhite } from "../../Shared/color";
+import { gray, zubgback, zubgbackgrad, zubggray, zubgmid, zubgshadow, zubgtext, zubgwhite } from "../../Shared/color";
 import aviator_game_image from "../../assets/aviator_game_image.png";
 import one from "../../assets/images/1.jpg";
 import two from "../../assets/images/2.jpg";
@@ -44,10 +45,11 @@ import logo from "../../assets/images/logo-2 (1) (1).png";
 import position3 from "../../assets/images/position3.png";
 import position1 from "../../assets/images/positoin1.png";
 import stage from "../../assets/images/pod2.png";
-import winp4 from "../../assets/images/winp4.jpg";
+import winp4 from "../../assets/images/jacpot.jpg";
 import sajid from "../../assets/sajid.PNG";
 import tanveer from "../../assets/tanveer.PNG";
 import Layout from "../../component/Layout/Layout";
+import gmbg from "../../assets/images/gmbg.jpg";
 import {
   please_reconnect_the_serverFun,
   waitingAviatorFun,
@@ -69,6 +71,7 @@ import Lottery from "./DashboadSubcomponent/Lottery";
 import Original from "./DashboadSubcomponent/Original";
 import Sports from "./DashboadSubcomponent/Sports";
 import Notification from "./Notification";
+import { Opacity } from "@mui/icons-material";
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -514,32 +517,44 @@ function Dashboard() {
           >
             {game_data?.map((i) => {
               return (
-                <a
-                  onClick={() => {
-                    if (
-                      i.name === "Slots" ||
-                      i.name === "Popular" ||
-                      i.name === "Casino" ||
-                      i.name === "Aviator"
-                    )
-                      return toast("Comming Soon !");
-                    scrollToSection("games");
-                    settype_of_game(i?.name);
-                  }}
-                  href={`#${i?.name}`}
-                  style={{
-                    background: zubgmid,
-                    padding: "10px",
-                    marginBottom: "10px",
-                    width: "95%",
-                  }}
-                  className="cursor-pointer rounded-lg  flex flex-col items-center justify-center"
-                >
-                  <img className="w-[90px] h-[90px] " src={i?.img} />
-                  <p className="!text-sm font-bold" style={{ color: 'white' }}>
+                <Box sx={{
+                  marginBottom: "10px",
+                  width: "95%",
+                  borderRadius: '7px 7px 7px 7px !important',
+                  overflow: 'hidden',
+                }}>
+                  <a
+                    onClick={() => {
+                      if (
+                        i.name === "Slots" ||
+                        i.name === "Popular" ||
+                        i.name === "Casino" ||
+                        i.name === "Aviator"
+                      )
+                        return toast("Comming Soon !");
+                      scrollToSection("games");
+                      settype_of_game(i?.name);
+                    }}
+                    href={`#${i?.name}`}
+                    style={{
+                      backgroundImage: `url(${bgms})`,
+                      backgroundRepeat: 'no-repeat',
+                      backgroundSize: '100% 100%',
+                      padding: '5px 15px 30px 15px',
+                      borderRadius: '7px 7px 0px 0px !important',
+                    }}
+                    className="cursor-pointer   flex flex-col items-center justify-center"
+                  >
+                    <img className="w-[90px] h-[90px] " src={i?.img} />
+
+                  </a>
+                  <p className="!text-sm font-bold" style={{
+                    color: 'white', background: zubgtext, width: '100%', textAlign: 'center', padding: '5px 0px',
+                    borderRadius: '0px 0px 7px 7px !important',
+                  }}>
                     {i?.name}
                   </p>
-                </a>
+                </Box>
               );
             })}
           </div>
@@ -835,7 +850,7 @@ function Dashboard() {
         </Container>
       </Box>
       <CustomCircularProgress isLoading={isLoading || profile_loding} />
-    </Layout>
+    </Layout >
   );
 }
 
@@ -868,7 +883,7 @@ const styles = {
     marginLeft: "2.5%",
   },
   referralLinkTitle: {
-    color: "#F02257 !important",
+    color: zubgtext,
     fontSize: "14px",
     fontWeight: "500 !important",
     mb: 1,
@@ -1000,48 +1015,55 @@ const styles = {
   wininfoouter: {
     width: "95%",
     marginLeft: "2.5%",
-    background: zubgwhite,
-    padding: "10px 10px",
+    // background: zubgwhite,
+    padding: "10px 5px",
     mt: "20px",
     borderRadius: "10px",
     boxShadow: zubgshadow,
+    backgroundImage: `url(${gmbg})`,
+    backgroundSize: "100% 100%",
+    position: "relative",
   },
   wininfooutertwo: {
     alignItems: "center",
     justifyContent: "space-between",
+    width: '65%',
+    justifyContent: 'space-around;',
     "&>img": {
-      width: "100px",
-      height: "50px",
+      width: "80px",
+      height: "40px",
       borderRadius: "10px",
       border: "1px solid #F02257",
-      marginRight: "10px",
+      marginRight: "5px",
     },
     "&>div>p:nth-child(1)": {
       color: zubgtext,
-      fontSize: "14px",
+      fontSize: "12px",
       fontWeight: "600",
       textAlign: "center",
     },
     "&>div>p:nth-child(2)": {
       color: zubgtext,
-      fontSize: "12px",
+      fontSize: "11px",
       fontWeight: "400",
       textAlign: "center",
     },
   },
   wininfoouterone: {
-    width: "45%",
     alignItems: "center",
     justifyContent: "start",
-    "&>p": { color: zubgtext, ml: "10px", fontSize: "13px", fontWeight: "500" },
+    width: '35%',
+    justifyContent: 'space-around;',
+    "&>p": { color: zubgtext, ml: "10px", fontSize: "11px", fontWeight: "600" },
   },
   wininfoinner: {
     alignItems: "center",
     justifyContent: "space-between",
     background: zubgback,
-    padding: "10px ",
+    padding: "10px 6px",
     borderRadius: "10px",
     boxShadow: zubgshadow,
+    opacity: 0.9,
   },
   winner1: {
     position: "absolute",

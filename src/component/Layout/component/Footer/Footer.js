@@ -1,16 +1,16 @@
 import { Box, Stack, Typography } from "@mui/material";
 import { useLocation, useNavigate } from "react-router-dom";
-import home from '../../../../assets/images/home.png';
-import homeact from '../../../../assets/images/home (1).png';
-import promotionact from '../../../../assets/images/diamond (1).png';
-import promotion from '../../../../assets/images/diamond (2).png';
-import puzzleact from '../../../../assets/images/restore.png';
-import puzzle from '../../../../assets/images/restore (1).png';
+import homeact from '../../../../assets/images/home (3).png';
+import home from '../../../../assets/images/home (2).png';
+import promotionact from '../../../../assets/images/diamond (4).png';
+import promotion from '../../../../assets/images/diamond (6).png';
+import puzzleact from '../../../../assets/images/activity.png';
+import puzzle from '../../../../assets/images/activity (1).png';
 import tabBarBg from '../../../../assets/images/tabBarBg-301df93c.png';
-import useract from '../../../../assets/images/user (5).png';
-import user from '../../../../assets/images/user (4).png';
-import walletact from '../../../../assets/images/wallet (2).png';
-import wallet from '../../../../assets/images/wallet (1).png';
+import useract from '../../../../assets/images/user (6).png';
+import user from '../../../../assets/images/user (7).png';
+import walletact from '../../../../assets/images/wallet (5).png';
+import wallet from '../../../../assets/images/wallet (4).png';
 import { zubgback, zubgmid, zubgtext } from "../../../../Shared/color";
 
 

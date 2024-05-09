@@ -35,6 +35,8 @@ import QRScreen from "./QRScreen";
 import { useDispatch, useSelector } from "react-redux";
 import { get_user_data_fn } from "../../../services/apicalling";
 import CryptoJS from "crypto-js";
+
+
 function WalletRecharge() {
   const [t_id, setT_id] = React.useState();
   const [callBackResponse, setCallBackResponse] = React.useState({
@@ -424,7 +426,6 @@ function WalletRecharge() {
         </Box>
         <Box
           sx={{
-            background: zubgmid,
             borderRadius: "10px",
             padding: "30px 20px",
             width: "95%",
@@ -436,8 +437,8 @@ function WalletRecharge() {
             component="img"
             src={playgame}
             sx={{
-              opacity: "0.2",
               position: "absolute",
+              opacity: "0.9",
               top: 0,
               left: 0,
               width: "100%",
@@ -447,7 +448,10 @@ function WalletRecharge() {
             }}
           ></Box>
           <Stack direction="row" sx={{ alignItems: "center" }}>
-            <Box component="img" src={balance} width={50}></Box>
+            <Box component="img" src={balance} width={50} sx={{
+              position: 'relative',
+              zIndex: 10,
+            }}></Box>
             <Typography
               variant="body1"
               color="initial"
@@ -456,13 +460,18 @@ function WalletRecharge() {
                 fontWeight: 500,
                 color: "white",
                 ml: "10px",
+                position: 'relative',
+                zIndex: 10,
               }}
             >
               {" "}
               Balance
             </Typography>
           </Stack>
-          <Stack direction="row" sx={{ alignItems: "center", mt: "10px" }}>
+          <Stack direction="row" sx={{
+            alignItems: "center", mt: "10px", position: 'relative',
+            zIndex: 10,
+          }}>
             <Typography
               variant="body1"
               color="initial"
@@ -471,6 +480,8 @@ function WalletRecharge() {
                 fontWeight: "600",
                 color: "white",
                 mr: "10px",
+                position: 'relative',
+                zIndex: 10,
               }}
             >
               {" "}
@@ -481,7 +492,10 @@ function WalletRecharge() {
                   Number(amount?.wallet || 0) + Number(amount?.winning || 0)
                 )?.toFixed(2)}
             </Typography>
-            <CachedIcon sx={{ color: "white" }} />
+            <CachedIcon sx={{
+              color: "white", position: 'relative',
+              zIndex: 10,
+            }} />
           </Stack>
           <Stack
             direction="row"
@@ -489,13 +503,18 @@ function WalletRecharge() {
               alignItems: "center",
               justifyContent: "space-between",
               mt: "20px",
+              position: 'relative',
+              zIndex: 10,
             }}
           >
             <Box component="img" src={cip} width={50}></Box>
             <Typography
               variant="body1"
               color="initial"
-              sx={{ fontSize: "14px ", color: "white", ml: "10px" }}
+              sx={{
+                fontSize: "14px ", color: "white", ml: "10px", position: 'relative',
+                zIndex: 10,
+              }}
             >
               **** **** **** ****
             </Typography>

@@ -16,7 +16,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import CustomCircularProgress from "../../../Shared/CustomCircularProgress";
 import { ForgetPasswordSchemaValidation } from "../../../Shared/Validation";
 import logo from "../../../assets/images/logo.png";
-import poster from "../../../assets/images/poster2.jpg";
+import poster from "../../../assets/images/poster3.jpg";
 import { endpoint } from "../../../services/urls";
 function ForgetPassword() {
   const [loding, setloding] = useState(false);
@@ -117,7 +117,7 @@ function ForgetPassword() {
           </Box>
           <Box
             sx={{
-              mt: "6vh",   
+              mt: "6vh",
               background: "white",
               borderRadius: "10px",
               padding: "20px 10px",

@@ -68,6 +68,7 @@ function WithdravalHistory() {
               boxShadow: zubgshadow,
               borderRadius: "10px",
               mb: 5,
+              mt: 3,
             }}
           >
             <Stack direction="row" sx={{ alignItems: "center", mb: "20px" }}>
@@ -88,7 +89,7 @@ function WithdravalHistory() {
                     padding: "15px",
                     borderRadius: "10px",
                     border: "1px solid white",
-                    background: zubgwhite,
+                    background: zubgback,
                     boxShadow: zubgshadow,
                     border: `1px solid #ff00422b`,
                   }}

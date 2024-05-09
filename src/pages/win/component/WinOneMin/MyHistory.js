@@ -64,7 +64,7 @@ const MyHistory = ({ gid }) => {
   return (
     <Box>
       <Stack direction="row" className="onegotextbox">
-        <Typography variant="body1" color="initial">
+        <Typography variant="body1" color="initial" sx={{ color: zubgtext }}>
           <Box
             component="img"
             src={history}
@@ -84,8 +84,8 @@ const MyHistory = ({ gid }) => {
             ?.filter((i) => i.status === "0")
             ?.map((i, index) => {
               return (
-                <div key={index}>
-                  <Accordion className="!rounded-lg">
+                <div key={index} style={{ mb: 3 }}>
+                  <Accordion className="!rounded-lg" >
                     <AccordionSummary
                       expandIcon={<ArrowDownwardIcon sx={{ color: zubgtext }} />}
                       aria-controls="panel1-content"

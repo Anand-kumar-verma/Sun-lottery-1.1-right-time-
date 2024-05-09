@@ -19,13 +19,12 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { NavLink, useNavigate } from "react-router-dom";
 // import * as uuid from "uuid";
-import { LoginMobileSchemaValidaton } from "../../../Shared/Validation";
-import { zubgmid } from "../../../Shared/color";
-import { endpoint } from "../../../services/urls";
-import CustomCircularProgress from "../../../Shared/CustomCircularProgress";
+import CryptoJS from 'crypto-js';
 import { storeCookies } from "../../../Shared/CookieStorage";
-import poster from "../../../assets/images/poster2.jpg";
-import CryptoJS from 'crypto-js'
+import CustomCircularProgress from "../../../Shared/CustomCircularProgress";
+import { LoginMobileSchemaValidaton } from "../../../Shared/Validation";
+import { zubgmid, zubgtext } from "../../../Shared/color";
+import { endpoint } from "../../../services/urls";
 function LoginWithMobile() {
   // const device_id = uuid.v4();
   const [showPassword, setShowPassword] = React.useState(false);
@@ -203,24 +202,16 @@ function LoginWithMobile() {
             control={
               <Checkbox
                 checked={fk.values.isAllowCheckBox}
-                sx={{ color: "black !important" }}
+                sx={{ color: zubgtext }}
               />
             }
             label="Remember password"
-            sx={{ color: "white" }}
+            sx={{ color: 'white', fontSize: '13px', fontWeight: '800' }}
           />
         </FormControl>
       </Box>
       <Stack direction="row" className="loginbtnbox" mt={2}>
-        <Button
-          type="submit"
-          value="Submit"
-          component={NavLink}
-          className="btnLogin"
-          onClick={fk.handleSubmit}
-        >
-          Let's go
-        </Button>
+
 
         <Button
           component={NavLink}
@@ -229,6 +220,15 @@ function LoginWithMobile() {
           to="/register"
         >
           Register
+        </Button>
+        <Button
+          type="submit"
+          value="Submit"
+          component={NavLink}
+          className="btnLogin"
+          onClick={fk.handleSubmit}
+        >
+          Let's go
         </Button>
       </Stack>
       <CustomCircularProgress isLoading={loding} />

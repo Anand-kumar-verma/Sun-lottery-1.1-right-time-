@@ -21,7 +21,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 // import * as uuid from "uuid";
 import CustomCircularProgress from "../../../Shared/CustomCircularProgress";
 import { LoginEmailSchemaValidaton } from "../../../Shared/Validation";
-import { zubgmid } from "../../../Shared/color";
+import { zubgmid, zubgtext } from "../../../Shared/color";
 import { endpoint } from "../../../services/urls";
 import { storeCookies } from "../../../Shared/CookieStorage";
 import CryptoJS from "crypto-js";
@@ -208,24 +208,16 @@ function LoginWithEmail() {
             control={
               <Checkbox
                 checked={fk.values.isAllowCheckBox}
-                sx={{ color: "black !important" }}
+                sx={{ color: zubgtext }}
               />
             }
             label="Remember password"
-            sx={{ color: "white" }}
+            sx={{ color: 'white', fontSize: '13px', fontWeight: '800' }}
           />
         </FormControl>
       </Box>
       <Stack direction="row" className="loginbtnbox" mt={2}>
-        <Button
-          type="submit"
-          value="Submit"
-          component={NavLink}
-          className="btnLogin"
-          onClick={fk.handleSubmit}
-        >
-          Let's go
-        </Button>
+
 
         <Button
           component={NavLink}
@@ -234,6 +226,15 @@ function LoginWithEmail() {
           to="/register"
         >
           Register
+        </Button>
+        <Button
+          type="submit"
+          value="Submit"
+          component={NavLink}
+          className="btnLogin"
+          onClick={fk.handleSubmit}
+        >
+          Let's go
         </Button>
       </Stack>
       <CustomCircularProgress isLoading={loding} />

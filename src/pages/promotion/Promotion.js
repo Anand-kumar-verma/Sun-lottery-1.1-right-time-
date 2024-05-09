@@ -6,9 +6,11 @@ import copy from "clipboard-copy";
 import toast from "react-hot-toast";
 import { useQuery } from "react-query";
 import { NavLink } from "react-router-dom";
-import { zubgback, zubgbackgrad, zubgmid, zubgtext } from "../../Shared/color";
+import { zubgback, zubgbackgrad, zubggray, zubgmid, zubgtext } from "../../Shared/color";
 import customer from "../../assets/images/24-hours-service.png";
 import copyIimage from "../../assets/images/copy.png";
+import bgms from "../../assets/images/bgs.jpg";
+import bgms1 from "../../assets/images/bgs1.jpg";
 import sort from "../../assets/images/data-flow.png";
 import donut from "../../assets/images/database.png";
 import book from "../../assets/images/rules.png";
@@ -58,133 +60,134 @@ function Promotion() {
         </Box>
         <Box sx={style.commitionboxOuter}>
           <Box sx={style.commitionbox}>
-            <Typography variant="body1" color="initial" className="!text-white">
+            <Typography variant="body1" color="initial" sx={{ color: zubgtext }}>
               {result?.today_turnover}
             </Typography>
-            <Typography variant="body1" color="initial" className="!text-white">
+            <Typography variant="body1" color="initial" sx={{ color: 'white' }}>
               Today's Turnover
             </Typography>
-            <Typography variant="body1" color="initial" className="!text-white">
+            <Typography variant="body1" color="initial" sx={{ color: zubgtext }}>
               Upgrade the level to increase turnover
             </Typography>
           </Box>
-          <Box sx={style.subcordinateBox}>
-            <Stack direction="row" sx={{ width: "100%" }}>
-              <Box sx={style.subordinatesleft}>
-                <EmojiPeopleOutlinedIcon />
+        </Box>
+        <Box sx={style.subcordinateBox}>
+          <Stack direction="row" sx={{ width: "100%" }}>
+            <Box sx={style.subordinatesleft}>
+              <EmojiPeopleOutlinedIcon />
+              <Typography variant="body1" color="initial">
+                {" "}
+                Direct subordinates
+              </Typography>
+            </Box>
+            <Box sx={style.subordinatesRight}>
+              <Groups2OutlinedIcon />
+              <Typography variant="body1" color="initial">
+                Team subordinates
+              </Typography>
+            </Box>
+          </Stack>
+          <Box sx={style.boxStyles}>
+            <Box sx={style.innerBoxStyles}>
+              <Box sx={style.subcordinatelist}>
+                <Typography
+                  variant="body1"
+                  color="initial"
+                  className="!text-white"
+                >
+                  {result?.count || 0}
+                </Typography>
+                <Typography
+                  variant="body1"
+                  color="initial"
+                  className="!text-white"
+                >
+                  {" "}
+                  Number of register
+                </Typography>
+              </Box>
+              <Box sx={style.subcordinatelist}>
+                <Typography
+                  variant="body1"
+                  color="initial"
+                  className="!text-white"
+                >
+                  {result?.deposit_member || 0}
+                </Typography>
+                <Typography
+                  variant="body1"
+                  color="initial"
+                  className="!text-white"
+                >
+                  {" "}
+                  Number of Deposit Members
+                </Typography>
+              </Box>
+              <Box sx={style.subcordinatelist}>
+                <Typography
+                  variant="body1"
+                  color="initial"
+                  className="!text-white"
+                >
+                  {result?.deposit_recharge || 0}
+                </Typography>
+                <Typography
+                  variant="body1"
+                  color="initial"
+                  className="!text-white"
+                >
+                  {" "}
+                  Deposit amount
+                </Typography>
+              </Box>
+              {/* <Box sx={style.subcordinatelist}>
+                  <Typography
+                    variant="body1"
+                    color="initial"
+                    className="!text-white"
+                  >
+                    0
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    color="initial"
+                    className="!text-white"
+                  >
+                    {" "}
+                    Number of people making first deposit
+                  </Typography>
+                </Box> */}
+            </Box>
+
+            <Box sx={style.innerBoxStylestwo}>
+              <Box sx={style.subcordinatelist}>
+                <Typography variant="body1" color="initial">
+                  {result?.teamcount || 0}
+                </Typography>
                 <Typography variant="body1" color="initial">
                   {" "}
-                  Direct subordinates
+                  Number of register{" "}
                 </Typography>
               </Box>
-              <Box sx={style.subordinatesRight}>
-                <Groups2OutlinedIcon />
+              <Box sx={style.subcordinatelist}>
                 <Typography variant="body1" color="initial">
-                  Team subordinates
+                  {result?.deposit_member_team || 0}
+                </Typography>
+                <Typography variant="body1" color="initial">
+                  {" "}
+                  Number of Deposit Members
                 </Typography>
               </Box>
-            </Stack>
-            <Box sx={style.boxStyles}>
-              <Box sx={style.innerBoxStyles}>
-                <Box sx={style.subcordinatelist}>
-                  <Typography
-                    variant="body1"
-                    color="initial"
-                    className="!text-white"
-                  >
-                    {result?.count || 0}
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    color="initial"
-                    className="!text-white"
-                  >
-                    {" "}
-                    Number of register
-                  </Typography>
-                </Box>
-                <Box sx={style.subcordinatelist}>
-                  <Typography
-                    variant="body1"
-                    color="initial"
-                    className="!text-white"
-                  >
-                    {result?.deposit_member || 0}
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    color="initial"
-                    className="!text-white"
-                  >
-                    {" "}
-                    Number of Deposit Members
-                  </Typography>
-                </Box>
-                <Box sx={style.subcordinatelist}>
-                  <Typography
-                    variant="body1"
-                    color="initial"
-                    className="!text-white"
-                  >
-                    {result?.deposit_recharge || 0}
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    color="initial"
-                    className="!text-white"
-                  >
-                    {" "}
-                    Deposit amount
-                  </Typography>
-                </Box>
-                {/* <Box sx={style.subcordinatelist}>
-                  <Typography
-                    variant="body1"
-                    color="initial"
-                    className="!text-white"
-                  >
-                    0
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    color="initial"
-                    className="!text-white"
-                  >
-                    {" "}
-                    Number of people making first deposit
-                  </Typography>
-                </Box> */}
+              <Box sx={style.subcordinatelist}>
+                <Typography variant="body1" color="initial">
+                  {result?.deposit_recharge_team || 0}
+                </Typography>
+                <Typography variant="body1" color="initial">
+                  {" "}
+                  Deposit amount
+                </Typography>
               </Box>
-
-              <Box sx={style.innerBoxStylestwo}>
-                <Box sx={style.subcordinatelist}>
-                  <Typography variant="body1" color="initial">
-                    {result?.teamcount || 0}
-                  </Typography>
-                  <Typography variant="body1" color="initial">
-                    {" "}
-                    Number of register{" "}
-                  </Typography>
-                </Box>
-                <Box sx={style.subcordinatelist}>
-                  <Typography variant="body1" color="initial">
-                    {result?.deposit_member_team || 0}
-                  </Typography>
-                  <Typography variant="body1" color="initial">
-                    {" "}
-                    Number of Deposit Members
-                  </Typography>
-                </Box>
-                <Box sx={style.subcordinatelist}>
-                  <Typography variant="body1" color="initial">
-                    {result?.deposit_recharge_team || 0}
-                  </Typography>
-                  <Typography variant="body1" color="initial">
-                    {" "}
-                    Deposit amount
-                  </Typography>
-                </Box>
-                {/* <Box sx={style.subcordinatelist}>
+              {/* <Box sx={style.subcordinatelist}>
                   <Typography variant="body1" color="initial">
                     0
                   </Typography>
@@ -193,95 +196,95 @@ function Promotion() {
                     Number of people making first deposit
                   </Typography>
                 </Box> */}
-              </Box>
-            </Box>
-            <Box sx={style.invitebtn}>
-              <NavLink
-                //  to="/promotion/PromotionShare"
-                onClick={() => functionTOCopy(`${fron_end_main_domain}/register?ref=${result?.referral_code}`)}
-              >
-                <Typography sx={{}}>INVITATION LINK</Typography>
-              </NavLink>
             </Box>
           </Box>
-          <Box sx={style.invitebutton} className="invitebutton">
+          <Box sx={style.invitebtn}>
+            <NavLink
+              //  to="/promotion/PromotionShare"
+              onClick={() => functionTOCopy(`${fron_end_main_domain}/register?ref=${result?.referral_code}`)}
+            >
+              <Typography sx={{}}>INVITATION LINK</Typography>
+            </NavLink>
+          </Box>
+        </Box>
+        <Box sx={style.invitebutton} className="invitebutton">
+          <Box sx={style.invitbox}>
+            <Stack direction="row">
+              {/* <Box component='img' src={copycode}></Box> */}
+              <Box
+                component="img"
+                src={copyIimage}
+                className="!cursor-pointer"
+                onClick={() => functionTOCopy(result?.referral_code)}
+              ></Box>
+              <Typography variant="body1" color="initial">
+                Copy invitation code
+              </Typography>
+            </Stack>
+            <Stack direction="row">
+              <Typography variant="body1" color="initial">
+                {result?.referral_code}
+              </Typography>
+              <ArrowForwardIosOutlinedIcon />
+            </Stack>
+          </Box>
+          <NavLink to="/promotion/TeamReport">
             <Box sx={style.invitbox}>
               <Stack direction="row">
-                {/* <Box component='img' src={copycode}></Box> */}
-                <Box
-                  component="img"
-                  src={copyIimage}
-                  className="!cursor-pointer"
-                  onClick={() => functionTOCopy(result?.referral_code)}
-                ></Box>
+                {/* <Box component='img' src={team_port}></Box> */}
+                <Box component="img" src={donut}></Box>
                 <Typography variant="body1" color="initial">
-                  Copy invitation code
+                  Subordinate data
                 </Typography>
               </Stack>
               <Stack direction="row">
-                <Typography variant="body1" color="initial">
-                  {result?.referral_code}
-                </Typography>
                 <ArrowForwardIosOutlinedIcon />
               </Stack>
             </Box>
-            <NavLink to="/promotion/TeamReport">
-              <Box sx={style.invitbox}>
-                <Stack direction="row">
-                  {/* <Box component='img' src={team_port}></Box> */}
-                  <Box component="img" src={donut}></Box>
-                  <Typography variant="body1" color="initial">
-                    Subordinate data
-                  </Typography>
-                </Stack>
-                <Stack direction="row">
-                  <ArrowForwardIosOutlinedIcon />
-                </Stack>
-              </Box>
-            </NavLink>
-            <NavLink to="/promotion/TeamReport/data">
-              <Box sx={style.invitbox}>
-                <Stack direction="row">
-                  {/* <Box component='img' src={team_port}></Box> */}
-                  <Box component="img" src={donut}></Box>
-                  <Typography variant="body1" color="initial">
-                    Team data
-                  </Typography>
-                </Stack>
-                <Stack direction="row">
-                  <ArrowForwardIosOutlinedIcon />
-                </Stack>
-              </Box>
-            </NavLink>
-            <NavLink to="/promotion/PromotionRule">
-              <Box sx={style.invitbox}>
-                <Stack direction="row">
-                  {/* <Box component='img' src={invite_reg}></Box> */}
-                  <Box component="img" src={book}></Box>
-                  <Typography variant="body1" color="initial">
-                    Invitation rules
-                  </Typography>
-                </Stack>
-                <Stack direction="row">
-                  <ArrowForwardIosOutlinedIcon />
-                </Stack>
-              </Box>
-            </NavLink>
-            <NavLink to="/promotion/customerLine/">
-              <Box sx={style.invitbox}>
-                <Stack direction="row">
-                  {/* <Box component='img' src={server}></Box> */}
-                  <Box component="img" src={customer}></Box>
-                  <Typography variant="body1" color="initial">
-                    Agent line customer service
-                  </Typography>
-                </Stack>
-                <Stack direction="row">
-                  <ArrowForwardIosOutlinedIcon />
-                </Stack>
-              </Box>
-            </NavLink>
-            {/* <NavLink to="/promotion/RebateRatio/">
+          </NavLink>
+          <NavLink to="/promotion/TeamReport/data">
+            <Box sx={style.invitbox}>
+              <Stack direction="row">
+                {/* <Box component='img' src={team_port}></Box> */}
+                <Box component="img" src={donut}></Box>
+                <Typography variant="body1" color="initial">
+                  Team data
+                </Typography>
+              </Stack>
+              <Stack direction="row">
+                <ArrowForwardIosOutlinedIcon />
+              </Stack>
+            </Box>
+          </NavLink>
+          <NavLink to="/promotion/PromotionRule">
+            <Box sx={style.invitbox}>
+              <Stack direction="row">
+                {/* <Box component='img' src={invite_reg}></Box> */}
+                <Box component="img" src={book}></Box>
+                <Typography variant="body1" color="initial">
+                  Invitation rules
+                </Typography>
+              </Stack>
+              <Stack direction="row">
+                <ArrowForwardIosOutlinedIcon />
+              </Stack>
+            </Box>
+          </NavLink>
+          <NavLink to="/promotion/customerLine/">
+            <Box sx={style.invitbox}>
+              <Stack direction="row">
+                {/* <Box component='img' src={server}></Box> */}
+                <Box component="img" src={customer}></Box>
+                <Typography variant="body1" color="initial">
+                  Agent line customer service
+                </Typography>
+              </Stack>
+              <Stack direction="row">
+                <ArrowForwardIosOutlinedIcon />
+              </Stack>
+            </Box>
+          </NavLink>
+          {/* <NavLink to="/promotion/RebateRatio/">
               <Box sx={style.invitbox}>
                 <Stack direction="row">
                   <Box component="img" src={money}></Box>
@@ -294,57 +297,57 @@ function Promotion() {
                 </Stack>
               </Box>
             </NavLink> */}
-            <Box sx={style.promotionBoxOuter}>
-              <Box sx={style.promotionBox}>
-                <Stack direction="row">
-                  {/* <Box component='img' src={download}></Box> */}
-                  <Box component="img" src={money}></Box>
-                  <Typography variant="body1" color="initial">
-                    Promotion data
-                  </Typography>
-                </Stack>
-              </Box>
+          <Box sx={style.promotionBoxOuter}>
+            <Box sx={style.promotionBox}>
               <Stack direction="row">
-                <Box>
-                  <Typography variant="body1" color="initial">
-                    {Number(Number(result?.turnover || 0) + Number(result?.today_turnover || 0))?.toFixed(2)}
-                  </Typography>
-                  <Typography variant="body1" color="initial">
-                    Total Turnover
-                  </Typography>
-                </Box>
-                <Box>
-                  <Typography variant="body1" color="initial">
-                    {result?.commission || 0}
-                  </Typography>
-                  <Typography variant="body1" color="initial">
-                    Total Commission
-                  </Typography>
-                </Box>
-              </Stack>
-              <Stack direction="row">
-                <Box>
-                  <Typography variant="body1" color="initial">
-                    {result?.count || 0}
-                  </Typography>
-                  <Typography variant="body1" color="initial">
-                    Direct subordinate
-                  </Typography>
-                </Box>
-                <Box>
-                  <Typography variant="body1" color="initial">
-                    {result?.teamcount || 0}
-                  </Typography>
-                  <Typography variant="body1" color="initial">
-                    Total number of <br />
-                    subordinates in the team
-                  </Typography>
-                </Box>
+                {/* <Box component='img' src={download}></Box> */}
+                <Box component="img" src={money}></Box>
+                <Typography variant="body1" color="initial">
+                  Promotion data
+                </Typography>
               </Stack>
             </Box>
-            <Box sx={style.promotionBoxOutertwo}></Box>
+            <Stack direction="row">
+              <Box>
+                <Typography variant="body1" color="initial">
+                  {Number(Number(result?.turnover || 0) + Number(result?.today_turnover || 0))?.toFixed(2)}
+                </Typography>
+                <Typography variant="body1" color="initial">
+                  Total Turnover
+                </Typography>
+              </Box>
+              <Box>
+                <Typography variant="body1" color="initial">
+                  {result?.commission || 0}
+                </Typography>
+                <Typography variant="body1" color="initial">
+                  Total Commission
+                </Typography>
+              </Box>
+            </Stack>
+            <Stack direction="row">
+              <Box>
+                <Typography variant="body1" color="initial">
+                  {result?.count || 0}
+                </Typography>
+                <Typography variant="body1" color="initial">
+                  Direct subordinate
+                </Typography>
+              </Box>
+              <Box>
+                <Typography variant="body1" color="initial">
+                  {result?.teamcount || 0}
+                </Typography>
+                <Typography variant="body1" color="initial">
+                  Total number of <br />
+                  subordinates in the team
+                </Typography>
+              </Box>
+            </Stack>
           </Box>
+          <Box sx={style.promotionBoxOutertwo}></Box>
         </Box>
+
         {openDialogBoxHomeBanner && (
           <Dialog PaperProps={{ width: "500px", height: "500px" }} open={openDialogBoxHomeBanner}>
             <div>
@@ -360,7 +363,7 @@ function Promotion() {
           </Dialog>
         )}
       </Container>
-    </Layout>
+    </Layout >
   );
 }
 
@@ -381,23 +384,23 @@ const style = {
     },
   },
   commitionboxOuter: {
-    mt: 2,
     width: "100%",
-    height: "20vh",
-    background: zubgtext,
+    backgroundImage: `url(${bgms})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '100% 100%',
     "&>img": { width: "100%", height: "100%" },
   },
   commitionbox: {
     margin: "auto",
     width: "70%",
     textAlign: "center",
-    py: 2,
+    py: 5,
     "&>p:nth-child(1)": { fontSize: "25px", fontWeight: "500" },
     "&>p:nth-child(2)": {
       fontSize: "13px",
       fontWeight: "400",
       padding: "5px 0px",
-      background: zubgbackgrad,
+      background: zubggray,
       borderRadius: "20px",
     },
     "&>p:nth-child(3)": {
@@ -413,7 +416,7 @@ const style = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    background: zubgbackgrad,
+    background: zubgtext,
     borderTopLeftRadius: "10px",
     borderRight: "2px solid black",
     "&>svg": { color: "white", fontSize: "25px", marginRight: "10px" },
@@ -426,14 +429,16 @@ const style = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    background: zubgbackgrad,
+    background: zubgtext,
     borderTopRightRadius: "10px",
     "&>svg": { color: "white", fontSize: "25px", marginRight: "10px" },
     "&>p": { color: "white", fontSize: "14px", fontWeight: "500" },
   },
   boxStyles: {
-    background: zubgtext,
-    padding: "15px",
+    backgroundImage: `url(${bgms1})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '100% 100%',
+    padding: "30px 15px",
     display: "flex",
     borderRadius: " 0px 0px 10px 10px",
   },
@@ -446,7 +451,7 @@ const style = {
   innerBoxStylestwo: { width: "50%", padding: "0px 0px" },
   subcordinatelist: {
     textAlign: "center",
-    "&>p": { color: "white !important", fontSize: "13px" },
+    "&>p": { color: "black !important", fontSize: "13px" },
     mb: 1,
   },
   subcordinateBox: {
@@ -474,7 +479,7 @@ const style = {
   },
   invitbox: {
     width: "95%",
-    background: zubgtext,
+    background: zubggray,
     padding: "10px",
     mb: "20px",
     borderRadius: "10px",

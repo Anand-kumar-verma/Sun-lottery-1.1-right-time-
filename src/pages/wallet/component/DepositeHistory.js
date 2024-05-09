@@ -17,6 +17,7 @@ import CustomCircularProgress from "../../../Shared/CustomCircularProgress";
 import { zubgback, zubgbackgrad, zubgmid, zubgshadow, zubgtext, zubgwhite } from "../../../Shared/color";
 import deposit from "../../../assets/images/list.png";
 import Layout from "../../../component/Layout/Layout";
+import gmbg from "../../../assets/images/gmbg.jpg";
 import {
   depositHistoryFunction
 } from "../../../services/apicalling";
@@ -68,6 +69,7 @@ function DepositeHistory() {
               background: zubgwhite,
               borderRadius: "10px",
               mb: 5,
+              mt: 2,
             }}
           >
             <Stack direction="row" sx={{ alignItems: "center", mb: "20px" }}>

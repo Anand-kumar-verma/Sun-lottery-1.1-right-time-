@@ -23,7 +23,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { storeCookies } from "../../../Shared/CookieStorage";
 import CustomCircularProgress from "../../../Shared/CustomCircularProgress";
 import { signupSchemaValidataon } from "../../../Shared/Validation";
-import { zubgbackgrad } from "../../../Shared/color";
+import { zubgbackgrad, zubgtext } from "../../../Shared/color";
 import logo from "../../../assets/images/logo-2 (2).png";
 import poster from "../../../assets/images/poster3.jpg";
 import { CandidateNameFn } from "../../../services/apicalling";
@@ -369,7 +369,7 @@ function Register() {
                     control={
                       <Checkbox
                         checked={fk.values.privacy_policy}
-                        sx={{ color: "black !important" }}
+                        sx={{ color: zubgtext }}
                         onClick={() =>
                           fk.setFieldValue(
                             "privacy_policy",
@@ -379,18 +379,12 @@ function Register() {
                       />
                     }
                     label="I have read and agree 【Privacy Agreement】"
-                    sx={{ color: "white" }}
+                    sx={{ color: 'white', fontSize: '13px !important', fontWeight: '800 !important' }}
                   />
                 </FormControl>
               </Box>
               <Stack direction="row" className="loginbtnbox" mt={2}>
-                <Button
-                  component={NavLink}
-                  className="btnLogin"
-                  onClick={fk.handleSubmit}
-                >
-                  Register
-                </Button>
+
                 <Button
                   component={NavLink}
                   to="/"
@@ -398,6 +392,13 @@ function Register() {
                   mt={2}
                 >
                   Log in
+                </Button>
+                <Button
+                  component={NavLink}
+                  className="btnLogin"
+                  onClick={fk.handleSubmit}
+                >
+                  Register
                 </Button>
               </Stack>
             </Box>

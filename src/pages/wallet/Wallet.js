@@ -6,12 +6,14 @@ import { useQuery } from "react-query";
 import { useMediaQuery } from "react-responsive";
 import { NavLink, useNavigate } from "react-router-dom";
 import CustomCircularProgress from "../../Shared/CustomCircularProgress";
-import { zubgback, zubgbackgrad, zubgmid, zubgshadow, zubgtext, zubgwhite } from "../../Shared/color";
+import { zubgback, zubgbackgrad, zubggray, zubgmid, zubgshadow, zubgtext, zubgwhite } from "../../Shared/color";
 import withdrow from "../../assets/images/withdraw.png";
 import rechargeIcon from "../../assets/images/deposit (2).png";
 import wdhistory from "../../assets/images/list.png";
 import deposite from "../../assets/images/manuscript.png";
-import wallet from "../../assets/images/wallet.png";
+import wallet from "../../assets/images/wallet (5).png";
+import bgms1 from "../../assets/images/playgame.jpg";
+import bgms from "../../assets/images/bgs.jpg";
 import Layout from "../../component/Layout/Layout";
 import { MyProfileDataFn } from "../../services/apicalling";
 import CloseIcon from "@mui/icons-material/Close";
@@ -42,12 +44,12 @@ function Wallet() {
   //     plotOptions: {
   //       radialBar: {
   //         stroke: {
-  //           color: '#F02257',
+  //           color: '#E71D1E',
   //           strokeWidth: 15,
   //           lineCap: 'round',
   //         },
   //         fill: {
-  //           colors: ['#F02257'],
+  //           colors: ['#E71D1E'],
   //         },
   //         startAngle: 0,
   //         endAngle: 365,
@@ -174,7 +176,7 @@ function Wallet() {
 
   const [series, setSeries] = React.useState([50.50]);
   const [options] = React.useState({
-    colors: ['#F02257', 'red', 'green'],
+    colors: ['#E71D1E', 'red', 'green'],
     chart: {
       height: 150,
       type: 'radialBar',
@@ -190,7 +192,7 @@ function Wallet() {
           },
         },
         stroke: {
-          colors: ['#F02257'],
+          colors: ['#E71D1E'],
         },
       },
       radialBar: {
@@ -229,7 +231,9 @@ function Wallet() {
             pt: 2,
             pb: 4,
             width: "100%",
-            background: zubgtext,
+            backgroundImage: `url(${bgms})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: '100% 100%',
             width: "95%",
             marginLeft: "2.5%",
             marginTop: "20px",
@@ -253,7 +257,7 @@ function Wallet() {
               className="walletBox"
             >
               <Box component="img" src={wallet} width={50}></Box>
-              <Typography variant="h2" color="initial" sx={{ color: 'white' }}>
+              <Typography variant="h2" color="initial" sx={{ color: zubgtext }}>
                 ₹{" "}
                 {(
                   Number(
@@ -262,7 +266,7 @@ function Wallet() {
                   ) || 0
                 )?.toFixed(0)}
               </Typography>
-              <Typography variant="body1" color="initial" sx={{ color: 'white' }}>
+              <Typography variant="body1" color="initial" sx={{ color: zubgtext }}>
                 Total balance
               </Typography>
             </Box>
@@ -277,8 +281,7 @@ function Wallet() {
               width: "100%",
               alignItems: "center",
               justifyContent: "space-between",
-              background: zubgwhite,
-              boxShadow: zubgshadow,
+              background: zubggray,
               borderRadius: '10px',
             }}
           >
@@ -321,6 +324,7 @@ function Wallet() {
                   top: '32%',
                   fontSize: '15px',
                   fontWeight: '700',
+                  color: 'white',
                 }}>{series}%</Typography>
                 <ReactApexChart options={options} series={series} type="radialBar" height={150} />
                 <Box
@@ -329,10 +333,10 @@ function Wallet() {
                     "&>p": { fontSize: "13px", fontWeight: 500 },
                   }}
                 >
-                  <Typography variant="body1" color="initial" sx={{ color: zubgtext, fontWeight: "600" }}>
+                  <Typography variant="body1" color="initial" sx={{ color: 'white', fontWeight: "600" }}>
                     {series}%
                   </Typography>
-                  <Typography variant="body1" color="initial" sx={{ color: zubgtext, fontWeight: "600" }}>
+                  <Typography variant="body1" color="initial" sx={{ color: 'white', fontWeight: "600" }}>
                     Bonus Amount
                   </Typography>
                 </Box>
@@ -340,6 +344,7 @@ function Wallet() {
               <Box sx={{ width: "50%", position: 'relative' }}>
                 <Typography variant="body1" color="initial" sx={{
                   position: 'absolute',
+                  color: 'white',
                   left: '39%',
                   top: '32%',
                   fontSize: '15px',
@@ -352,10 +357,10 @@ function Wallet() {
                     "&>p": { fontSize: "13px", fontWeight: 500 },
                   }}
                 >
-                  <Typography variant="body1" color="initial" sx={{ color: zubgtext, fontWeight: "600" }}>
+                  <Typography variant="body1" color="initial" sx={{ color: 'white', fontWeight: "600" }}>
                     {series}%
                   </Typography>
-                  <Typography variant="body1" color="initial" sx={{ color: zubgtext, fontWeight: "600" }}>
+                  <Typography variant="body1" color="initial" sx={{ color: 'white', fontWeight: "600" }}>
                     Winning Amount
                   </Typography>
                 </Box>
@@ -392,10 +397,11 @@ function Wallet() {
               width: "100%",
               justifyContent: "space-between",
               alignItems: "baseline",
-              background: zubgwhite,
-              boxShadow: zubgshadow,
+              backgroundImage: `url(${bgms})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: '100% 100%',
               borderRadius: '10px',
-              padding: '20px 10px',
+              padding: '40px 10px',
               mt: 3,
             }}
           >
@@ -409,7 +415,8 @@ function Wallet() {
 
                 "&>a>p": {
                   fontSize: "12px",
-                  color: zubgtext,
+                  color: 'black',
+                  fontWeight: 600,
                   textAlign: "center",
                 },
                 mt: "30px",
@@ -435,7 +442,8 @@ function Wallet() {
                 justifyContent: "center",
                 "&>a>p": {
                   fontSize: "12px",
-                  color: zubgtext,
+                  color: 'black',
+                  fontWeight: 600,
                   textAlign: "center",
                 },
                 mt: "30px",
@@ -460,7 +468,8 @@ function Wallet() {
                 justifyContent: "center",
                 "&>a>p": {
                   fontSize: "12px",
-                  color: zubgtext,
+                  color: 'black',
+                  fontWeight: 600,
                   textAlign: "center",
                 },
                 mt: "30px",
@@ -484,7 +493,8 @@ function Wallet() {
                 justifyContent: "center",
                 "&>a>p": {
                   fontSize: "12px",
-                  color: zubgtext,
+                  color: 'black',
+                  fontWeight: 600,
                   textAlign: "center",
                 },
                 "&>a>img": { margin: "auto" },
@@ -493,7 +503,7 @@ function Wallet() {
               <NavLink to="/withdravalHistory">
                 <Box component="img" src={deposite} width={50}></Box>
                 <Typography variant="body1" color="initial" mt={1}>
-                  Withdrawal history
+                  WDRL history
                 </Typography>
               </NavLink>
             </Box>
@@ -616,12 +626,12 @@ const style = {
     textAlign: "center",
     width: "31%",
     minHeight: "15vh",
-    background: zubgmid,
+    background: zubggray,
     borderRadius: "10px",
     mb: "20px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    "&>div>p": { color: "white" },
+    "&>div>p": { color: 'white', fontWeight: 600, },
   },
 };

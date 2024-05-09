@@ -76,7 +76,7 @@ const GameHistory = ({ gid }) => {
   return (
     <Box>
       <Stack direction="row" className="onegotextbox">
-        <Typography variant="body1" color="initial">
+        <Typography variant="body1" color="initial" sx={{ color: `${zubgtext} !important` }}>
           <Box component='img' src={history} width={25} sx={{ marginRight: '10px' }}></Box>
           {gid === "1"
             ? "One GO Record"

@@ -96,7 +96,7 @@ const Chart = ({ gid }) => {
   return (
     <Box className="chartTable">
       <Stack direction="row" className="onegotextbox">
-        <Typography variant="body1" color="initial">
+        <Typography variant="body1" color="initial" sx={{ color: zubgtext }}>
           <Box
             component="img"
             src={history}

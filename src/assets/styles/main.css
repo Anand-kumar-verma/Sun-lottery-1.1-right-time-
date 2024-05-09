@@ -58,7 +58,7 @@ img {
 
 
 .activeNav>h3 {
-  color: #F02257 !important;
+  color: #E71D1E !important;
   font-weight: 700;
 }
 
@@ -108,7 +108,7 @@ img {
 }
 
 .btnLogin {
-  background: #F02257 !important;
+  background: #E71D1E !important;
   font-size: 14px !important;
   font-weight: 600 !important;
   text-transform: capitalize !important;
@@ -118,7 +118,7 @@ img {
 }
 
 .btnregister {
-  background: #ff4b00c4 !important;
+  background: #B3B0B1 !important;
   font-size: 14px !important;
   font-weight: 600 !important;
   text-transform: capitalize !important;
@@ -143,7 +143,7 @@ img {
 .loginfields>div>input {
   background-color: transparent !important;
   border-radius: 5px;
-  border: 1px solid #F02257 !important;
+  border: 1px solid #E71D1E !important;
 }
 
 .loginfields>div>input.MuiInputBase-input {
@@ -169,7 +169,7 @@ img {
 .loginfieldspass {
   background: transparent !important;
   border-radius: 5px !important;
-  border: 1px solid #F02257;
+  border: 1px solid #E71D1E;
   padding: 0px 10px;
 }
 
@@ -197,7 +197,7 @@ img {
 }
 
 .loginfieldsres>div>input.MuiInputBase-input::placeholder {
-  color: #F02257 !important;
+  color: #E71D1E !important;
   font-size: 13px;
 }
 
@@ -239,7 +239,7 @@ img {
 .serv-item {
   width: 45px;
   height: 45px;
-  border: 1px solid #F02257 !important;
+  border: 1px solid #E71D1E !important;
   padding: 5px;
   box-sizing: border-box;
   border-radius: 5px;
@@ -375,7 +375,7 @@ img {
 .Winnav h3 {
   font-size: 14px;
   font-weight: 600;
-  color: #F02257 !important
+  color: #E71D1E !important
 }
 
 .Winnav>img {
@@ -394,7 +394,7 @@ img {
 }
 
 .activewinNav {
-  background: #F02257 !important;
+  background: #E71D1E !important;
   border-radius: 5px;
   padding: 10px;
 }
@@ -410,7 +410,7 @@ img {
 .Winnavtow h3 {
   font-size: 14px;
   font-weight: 600;
-  color: #F02257 !important
+  color: #E71D1E !important
 }
 
 .Winnavtow>img {
@@ -428,7 +428,7 @@ img {
 }
 
 .activewinNavtwo {
-  background: #F02257;
+  background: #E71D1E;
   border-radius: 5px;
   padding: 15px;
 }
@@ -519,7 +519,7 @@ img {
   justify-content: center;
   font-style: 16px;
   font-weight: 700;
-  color: #F02257;
+  color: #E71D1E;
 }
 
 .timerBoxone {
@@ -533,7 +533,7 @@ img {
   justify-content: center;
   font-style: 16px;
   font-weight: 700;
-  color: #F02257;
+  color: #E71D1E;
   clip-path: polygon(29% 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 0 36%) !important;
 }
 
@@ -548,7 +548,7 @@ img {
   justify-content: center;
   font-style: 16px;
   font-weight: 700;
-  color: #F02257;
+  color: #E71D1E;
   clip-path: polygon(0 0, 100% 0, 100% 0, 100% 64%, 71% 100%, 0 100%) !important;
 }
 
@@ -629,7 +629,6 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white !important;
   font-size: 14px;
   font-weight: 500;
 }
@@ -639,7 +638,7 @@ img {
 }
 
 .wintable>thead {
-  background: #F02257;
+  background: #E71D1E;
 }
 
 
@@ -855,7 +854,7 @@ img {
 }
 
 .dialog-header-policy {
-  background: #F02257 !important;
+  background: #E71D1E !important;
   color: #ffffff !important;
   border: 0 !important;
   display: flex !important;
@@ -908,8 +907,8 @@ img {
 }
 
 .bat-price-input-box>button {
-  border: 1px solid #F02257;
-  color: #F02257;
+  border: 1px solid #E71D1E;
+  color: #E71D1E;
   border-radius: 0;
   border-radius: 5px;
   width: 35px;
@@ -926,7 +925,7 @@ img {
   width: 100%;
   padding: 0.5rem 0.75rem;
   line-height: 1.17333rem;
-  color: #F02257;
+  color: #E71D1E;
   background-color: #dbdbdb;
   border-radius: 0.26667rem;
   border: 0 !important;
@@ -994,7 +993,7 @@ img {
   flex-direction: row;
   flex-wrap: wrap;
   border-radius: 15px 15px 0px 0px;
-  background: #F02257;
+  background: #E71D1E;
   scrollbar-color: transparent transparent;
   color: white;
 }
@@ -1004,7 +1003,7 @@ img {
 }
 
 .dialog-text>p {
-  color: #F02257 !important;
+  color: #E71D1E !important;
   font-size: 11px;
   font-weight: 300;
   margin-bottom: 5px;
@@ -1025,11 +1024,11 @@ img {
 .search>input {
   background-color: #e3e3e393 !important;
   border-radius: 10px;
-  color: #F02257;
+  color: #E71D1E;
 }
 
 .search>input.MuiInputBase-input::placeholder {
-  color: #F02257 !important;
+  color: #E71D1E !important;
 }
 
 .search>fieldset {
@@ -1238,7 +1237,7 @@ img {
 }
 
 .wallet-textfield {
-  background-color: #F02257 !important;
+  background-color: #E71D1E !important;
   border-radius: 10px;
   text-align: center;
 }
@@ -1266,15 +1265,15 @@ img {
 }
 
 .withdrawalfield>div>input.MuiInputBase-input {
-  color: #F02257 !important;
+  color: #E71D1E !important;
 }
 
 .withdrawalfield>div>input.MuiInputBase-input::placeholder {
-  color: #F02257 !important;
+  color: #E71D1E !important;
 }
 
 .withdrawalfield>div>input::placeholder {
-  color: #F02257;
+  color: #E71D1E;
 }
 
 .withdrawalfield>div>fieldset {

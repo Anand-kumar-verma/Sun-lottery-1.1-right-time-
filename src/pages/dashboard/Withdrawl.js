@@ -233,7 +233,6 @@ function Withdrawl() {
         </Box>
         <Box
           sx={{
-            background: zubgmid,
             borderRadius: "10px",
             padding: "30px 20px",
             width: "95%",
@@ -246,7 +245,7 @@ function Withdrawl() {
             component="img"
             src={playgame}
             sx={{
-              opacity: "0.2",
+              opacity: "0.9",
               position: "absolute",
               top: 0,
               left: 0,
@@ -256,7 +255,10 @@ function Withdrawl() {
               overflow: "hidden",
             }}
           ></Box>
-          <Stack direction="row" sx={{ alignItems: "center" }}>
+          <Stack direction="row" sx={{
+            alignItems: "center", position: 'relative',
+            zIndex: 10,
+          }}>
             <Box component="img" src={balance} width={50}></Box>
             <Typography
               variant="body1"
@@ -281,6 +283,8 @@ function Withdrawl() {
                 fontWeight: "600",
                 color: "white",
                 mr: "10px",
+                position: 'relative',
+                zIndex: 10,
               }}
             >
               ₹{" "}
@@ -290,21 +294,31 @@ function Withdrawl() {
                   Number(amount?.wallet || 0) + Number(amount?.winning || 0)
                 )?.toFixed(2)}
             </Typography>
-            <CachedIcon sx={{ color: "white" }} />
+            <CachedIcon sx={{
+              color: "white", position: 'relative',
+              zIndex: 10,
+            }} />
           </Stack>
           <Stack
             direction="row"
             sx={{
               alignItems: "center",
               justifyContent: "space-between",
-              mt: "20px",
+              mt: "20px", position: 'relative',
+              zIndex: 10,
             }}
           >
-            <Box component="img" src={cip} width={50}></Box>
+            <Box component="img" src={cip} width={50} sx={{
+              position: 'relative',
+              zIndex: 10,
+            }}></Box>
             <Typography
               variant="body1"
               color="initial"
-              sx={{ fontSize: "14px ", color: "white", ml: "10px" }}
+              sx={{
+                fontSize: "14px ", color: "white", ml: "10px", position: 'relative',
+                zIndex: 10,
+              }}
             >
               **** **** **** ****
             </Typography>

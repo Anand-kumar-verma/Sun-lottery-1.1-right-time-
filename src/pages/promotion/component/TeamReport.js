@@ -53,7 +53,7 @@ function TeamReports() {
               boxShadow: zubgshadow,
               borderRadius: "10px",
               padding: "30px 20px",
-              "&>div": { mb: 2 },
+              "&>div": { mb: 1 },
               "&>div>div:nth-child(1)": {
                 borderRight: "1px solid black",
                 width: "50%",
@@ -67,16 +67,15 @@ function TeamReports() {
               },
             }}
           >
-            <div style={{ color: zubgtext }} className="!grid !grid-cols-6  pl-2 !place-items-center !bg-[#281970] !bg-opacity-5">
+            <div style={{ color: 'white', background: zubgtext, padding: '10px', borderRadius: '5px' }} className="!grid !grid-cols-6   !place-items-center ">
               <span>S.No.</span>
               <span>User Id</span>
               <span className="!col-span-2">Name</span>
               <span className="!col-span-2">Mobile No</span>
             </div>
-            <div className="h-[2px] w-full !bg-[#281970]"></div>
             {result?.directReferrals?.map((i, index) => {
               return (
-                <div style={{ color: zubgtext }} className="!grid !grid-cols-6  pl-2 !place-items-center">
+                <div style={{ color: 'white', background: zubgback, color: zubgtext, borderRadius: '5px', padding: '10px 20px', }} className="!grid !grid-cols-6   !place-items-center">
                   <span >{index + 1}</span>
                   <span>{i?.id}</span>
                   <span className="!text-center !col-span-2">{i?.user_name || "No data found"}</span>
