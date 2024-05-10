@@ -200,17 +200,16 @@ export const demomobilesec = `
   
 `;
 
-
 // 50% {
 //   left: 70%;
 //   top: calc(30% - 100px);
 // }
-export function animationabove_10_sec(mainDiv, animationAdded,dispatch,fk) {
+export function animationabove_10_sec(mainDiv, animationAdded, dispatch, fk) {
   mainDiv.style.animation = `slidein 5s linear forwards running`;
 
   mainDiv.addEventListener("animationend", () => {
     mainDiv.style.animation = `slideafter 5s linear forwards running ${
-      (animationAdded - 5) / 5 - .3  
+      (animationAdded - 5) / 5 - 0.3
     }`;
     mainDiv.addEventListener("animationend", () => {
       mainDiv.style.animation = `thirdAnimation .5s linear forwards running`;
@@ -218,9 +217,9 @@ export function animationabove_10_sec(mainDiv, animationAdded,dispatch,fk) {
   });
 }
 
-export function animationupto_10_sec(mainDiv, animationAdded,dispatch,fk) {
+export function animationupto_10_sec(mainDiv, animationAdded, dispatch, fk) {
   mainDiv.style.animation = `slidein ${
-    animationAdded - .3
+    animationAdded - 0.3
   }s linear forwards running`;
 
   mainDiv.addEventListener("animationend", () => {
@@ -228,26 +227,25 @@ export function animationupto_10_sec(mainDiv, animationAdded,dispatch,fk) {
   });
 }
 
-export function animationUpTo_5_sec(mainDiv, animationAdded,dispatch,fk) {
+export function animationUpTo_5_sec(mainDiv, animationAdded, dispatch, fk) {
   mainDiv.style.animation = `slidein ${
-    animationAdded - .3
+    animationAdded - 0.3
   }s linear forwards running`;
 
   mainDiv.addEventListener("animationend", () => {
     mainDiv.style.animation = `thirdAnimation .5s linear forwards running`;
-   
   });
 }
-export function animationUpTo_1_sec(mainDiv, animationAdded,dispatch,fk) {
+export function animationUpTo_1_sec(mainDiv, animationAdded, dispatch, fk) {
   mainDiv.style.animation = `slideinlapinitial .5s linear forwards running`;
 
   mainDiv.addEventListener("animationend", () => {
-    mainDiv.style.animation = `slideinlap ${animationAdded-1-.3}s linear forwards running`;
-    
+    mainDiv.style.animation = `slideinlap ${
+      animationAdded - 1 - 0.3
+    }s linear forwards running`;
+
     mainDiv.addEventListener("animationend", () => {
       mainDiv.style.animation = `thirdAnimation .3s linear forwards running`;
-     
     });
   });
-
 }
