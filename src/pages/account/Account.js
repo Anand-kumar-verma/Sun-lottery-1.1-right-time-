@@ -14,7 +14,15 @@ import { useEffect, useState } from "react";
 import { useQuery, useQueryClient } from "react-query";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import CustomCircularProgress from "../../Shared/CustomCircularProgress";
-import { zubgback, zubgbackgrad, zubggray, zubgmid, zubgshadow, zubgtext, zubgwhite } from "../../Shared/color";
+import {
+  zubgback,
+  zubgbackgrad,
+  zubggray,
+  zubgmid,
+  zubgshadow,
+  zubgtext,
+  zubgwhite,
+} from "../../Shared/color";
 import cip from "../../assets/cip.png";
 import dp1 from "../../assets/images/pr.png";
 import dp2 from "../../assets/dp2.png";
@@ -42,10 +50,9 @@ import sunlotteryhomebanner from "../../assets/sunlotteryhomebanner.jpg";
 import Layout from "../../component/Layout/Layout";
 import { MyProfileDataFn } from "../../services/apicalling";
 import axios from "axios";
-import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
+import ContentCopyOutlinedIcon from "@mui/icons-material/ContentCopyOutlined";
 import bgms from "../../assets/images/playgame.jpg";
-
-
+import { baseUrl, fron_end_main_domain } from "../../services/urls";
 
 function Account() {
   const location = useLocation();
@@ -72,10 +79,10 @@ function Account() {
   async function sendUrlCallBackToBackend(transactionId) {
     try {
       const res = await axios.get(
-        `https://admin.sunlottery.fun/api/deposit-collback?orderid=${transactionId}`
+        `${baseUrl}/api/deposit-collback?orderid=${transactionId}`
       );
       if (res?.data?.status === "200") {
-        window.location.href = "https://sunlottery.fun/account"
+        window.location.href = `${fron_end_main_domain}/account`;
       }
       console.log(res);
     } catch (e) {
@@ -90,7 +97,6 @@ function Account() {
     }
   }, []);
 
-
   return (
     <Layout>
       <Container sx={style.container}>
@@ -103,20 +109,16 @@ function Account() {
             />
           </Box>
           <Box sx={style.userInfo}>
-            <Stack direction='row' alignItems='center'>
+            <Stack direction="row" alignItems="center">
               <Typography variant="" color="initial" sx={{ mr: 2 }}>
                 {result?.full_name}
-
               </Typography>
-              <Box
-                component="img"
-                src={namer}
-                sx={{ width: '50px', }}
-              />
+              <Box component="img" src={namer} sx={{ width: "50px" }} />
             </Stack>
 
             <Typography variant="body1" color="initial" sx={{ mt: 1 }}>
-              UID | {result?.custid || 0} <ContentCopyOutlinedIcon sx={{ fontSize: '15px', ml: 2 }} />
+              UID | {result?.custid || 0}{" "}
+              <ContentCopyOutlinedIcon sx={{ fontSize: "15px", ml: 2 }} />
             </Typography>
           </Box>
         </Stack>
@@ -133,7 +135,7 @@ function Account() {
               {(
                 Number(
                   Number(result?.winning_wallet || 0) +
-                  Number(result?.wallet || 0)
+                    Number(result?.wallet || 0)
                 ) || 0
               )?.toFixed(0)}
             </Typography>
@@ -516,7 +518,6 @@ const style = {
     width: "95%",
     margin: "auto",
     mb: 2,
-
   },
   profileBox: {
     width: "60px",
@@ -524,7 +525,7 @@ const style = {
     borderRadius: "20px",
     overflow: "hidden",
   },
-  profileImage: { width: "100%", height: "100%", borderRadius: "20px", },
+  profileImage: { width: "100%", height: "100%", borderRadius: "20px" },
   userInfo: {
     ml: 3,
     "& > :nth-child(1)": {
@@ -535,17 +536,17 @@ const style = {
     "& > :nth-child(2)": {
       fontSize: "14px",
       fontWeight: "400",
-      color: 'white',
-      padding: '0px 20px',
+      color: "white",
+      padding: "0px 20px",
       background: zubgmid,
-      borderRadius: '20px',
+      borderRadius: "20px",
     },
   },
   rankImage: { width: "100px", height: "100px" },
   balanceContainer: {
     backgroundImage: `url(${bgms})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: '100% 100%',
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "100% 100%",
     borderRadius: "10px",
     padding: "20px",
     width: "95%",

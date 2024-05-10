@@ -49,7 +49,6 @@ export const MypromotionDataFn = async () => {
     );
     return response;
   } catch (e) {
-    toast(e?.message);
     console.log(e);
   }
 };
@@ -214,7 +213,7 @@ export const registrationBonusFn = async () => {
     const response = await axios.get(
       `${endpoint.registration_bonus}?user_id=${user_id}`
     );
-    console.log(response)
+    console.log(response);
     return response;
   } catch (e) {
     toast(e?.message);
@@ -226,7 +225,7 @@ export const team_trading_bonus_functoin = async () => {
     const response = await axios.get(
       `${endpoint.team_trading_bonus}?user_id=${user_id}`
     );
-    console.log(response)
+    console.log(response);
     return response;
   } catch (e) {
     toast(e?.message);
@@ -278,7 +277,7 @@ export const dailyWalletIncomeFn = async () => {
   }
 };
 export const dailySalaryIncomeFn = async () => {
-  // 
+  //
   try {
     const response = await axios.get(
       `${endpoint.daily_salary_income}?user_id=${user_id}`
@@ -290,7 +289,7 @@ export const dailySalaryIncomeFn = async () => {
   }
 };
 export const teamRewartBonus = async () => {
-  // 
+  //
   try {
     const response = await axios.get(
       `${endpoint.team_reward_bonus}?user_id=${user_id}`

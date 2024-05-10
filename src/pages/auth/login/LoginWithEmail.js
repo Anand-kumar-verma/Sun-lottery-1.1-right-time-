@@ -46,11 +46,6 @@ function LoginWithEmail() {
     initialValues: initialValue,
     validationSchema: LoginEmailSchemaValidaton,
     onSubmit: () => {
-      if (!fk.values.isAllowCheckBox) {
-        toast("Plese Check Remember Password!");
-        return;
-      }
-      console.log(fk.values);
       if (fk.values.pass && (fk.values.mob || fk.values.email)) {
         const reqbody = {
           username: fk.values.email || fk.values.mob,

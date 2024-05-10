@@ -28,7 +28,7 @@ function GameNotification() {
           <Stack direction='row' sx={style.notificationStack}>
             <Stack direction='row' sx={style.notificationStack}>
               <Box component={'img'} src={promotion} sx={{ width: '30px', height: '30px' }}></Box>
-              <Typography variant="body1" color="initial">About Withdrawal - Sun Lottery Notify</Typography>
+              <Typography variant="body1" color="initial">About Withdrawal - Right Time Notify</Typography>
             </Stack>
           </Stack>
           <Typography variant="body1" color="initial">

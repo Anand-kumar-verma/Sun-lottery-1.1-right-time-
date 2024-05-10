@@ -37,7 +37,6 @@ function DepositeHistory() {
   );
   const res = data?.data?.data?.filter((i) => i?.tr15_depo_type === "Winzo")
 
-  console.log(res, "THis is response");
 
   return (
     <Layout>

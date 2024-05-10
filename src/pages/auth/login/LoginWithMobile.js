@@ -46,17 +46,11 @@ function LoginWithMobile() {
     initialValues: initialValue,
     validationSchema: LoginMobileSchemaValidaton,
     onSubmit: () => {
-      if (!fk.values.isAllowCheckBox) {
-        toast("Plese Check Remember Password!");
-        return;
-      }
-
       const reqbody = {
         username: fk.values.mob,
         password: fk.values.pass,
         // device_id: device_id,
       };
-      console.log(reqbody);
       loginFunction(reqbody);
     },
   });

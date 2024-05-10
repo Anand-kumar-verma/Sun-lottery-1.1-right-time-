@@ -1,12 +1,27 @@
 import KeyboardArrowLeftOutlinedIcon from "@mui/icons-material/KeyboardArrowLeftOutlined";
-import { Box, Container, Dialog, IconButton, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Dialog,
+  IconButton,
+  Stack,
+  Typography,
+} from "@mui/material";
 import * as React from "react";
 import ReactApexChart from "react-apexcharts";
 import { useQuery } from "react-query";
 import { useMediaQuery } from "react-responsive";
 import { NavLink, useNavigate } from "react-router-dom";
 import CustomCircularProgress from "../../Shared/CustomCircularProgress";
-import { zubgback, zubgbackgrad, zubggray, zubgmid, zubgshadow, zubgtext, zubgwhite } from "../../Shared/color";
+import {
+  zubgback,
+  zubgbackgrad,
+  zubggray,
+  zubgmid,
+  zubgshadow,
+  zubgtext,
+  zubgwhite,
+} from "../../Shared/color";
 import withdrow from "../../assets/images/withdraw.png";
 import rechargeIcon from "../../assets/images/deposit (2).png";
 import wdhistory from "../../assets/images/list.png";
@@ -22,7 +37,8 @@ import sunlotteryhomebanner from "../../assets/sunlotteryhomebanner.jpg";
 function Wallet() {
   const isMediumScreen = useMediaQuery({ minWidth: 800 });
   const navigate = useNavigate();
-  const [openDialogBoxHomeBanner, setopenDialogBoxHomeBanner] = React.useState(false);
+  const [openDialogBoxHomeBanner, setopenDialogBoxHomeBanner] =
+    React.useState(false);
   const { isLoading, data } = useQuery(["myprofile"], () => MyProfileDataFn(), {
     refetchOnMount: false,
     refetchOnReconnect: true,
@@ -174,34 +190,38 @@ function Wallet() {
   //   },
   // };
 
-  const [series, setSeries] = React.useState([50.50]);
+  const series = [Number(result?.bonus || 0)?.toFixed(2) || 0];
+  const series2 = [
+    (Number(Number(result?.winning_wallet || 0)%100) || 0)?.toFixed(2),
+  ];
+  
   const [options] = React.useState({
-    colors: ['#E71D1E', 'red', 'green'],
+    colors: ["#E71D1E", "red", "green"],
     chart: {
       height: 150,
-      type: 'radialBar',
+      type: "radialBar",
     },
     plotOptions: {
       radialBar: {
         dataLabels: {
           name: {
-            fontSize: '11px',
+            fontSize: "11px",
           },
           value: {
-            fontSize: '16px',
+            fontSize: "16px",
           },
         },
         stroke: {
-          colors: ['#E71D1E'],
+          colors: ["#E71D1E"],
         },
       },
       radialBar: {
         dataLabels: {
-          show: false
-        }
-      }
+          show: false,
+        },
+      },
     },
-    labels: ['0.40%', 'B', 'C', 'D'],
+    labels: ["0.40%", "B", "C", "D"],
   });
 
   return (
@@ -232,8 +252,8 @@ function Wallet() {
             pb: 4,
             width: "100%",
             backgroundImage: `url(${bgms})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: '100% 100%',
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "100% 100%",
             width: "95%",
             marginLeft: "2.5%",
             marginTop: "20px",
@@ -262,11 +282,15 @@ function Wallet() {
                 {(
                   Number(
                     Number(result?.winning_wallet || 0) +
-                    Number(result?.wallet || 0)
+                      Number(result?.wallet || 0)
                   ) || 0
                 )?.toFixed(0)}
               </Typography>
-              <Typography variant="body1" color="initial" sx={{ color: zubgtext }}>
+              <Typography
+                variant="body1"
+                color="initial"
+                sx={{ color: zubgtext }}
+              >
                 Total balance
               </Typography>
             </Box>
@@ -282,7 +306,7 @@ function Wallet() {
               alignItems: "center",
               justifyContent: "space-between",
               background: zubggray,
-              borderRadius: '10px',
+              borderRadius: "10px",
             }}
           >
             {/* <Box sx={{ width: "50%" }}>
@@ -317,50 +341,88 @@ function Wallet() {
                 padding: 2,
               }}
             >
-              <Box sx={{ width: "50%", position: 'relative' }}>
-                <Typography variant="body1" color="initial" sx={{
-                  position: 'absolute',
-                  left: '39%',
-                  top: '32%',
-                  fontSize: '15px',
-                  fontWeight: '700',
-                  color: 'white',
-                }}>{series}%</Typography>
-                <ReactApexChart options={options} series={series} type="radialBar" height={150} />
+              <Box sx={{ width: "50%", position: "relative" }}>
+                <Typography
+                  variant="body1"
+                  color="initial"
+                  sx={{
+                    position: "absolute",
+                    left: "39%",
+                    top: "32%",
+                    fontSize: "15px",
+                    fontWeight: "700",
+                    color: "white",
+                  }}
+                >
+                  {series}%
+                </Typography>
+                <ReactApexChart
+                  options={options}
+                  series={series}
+                  type="radialBar"
+                  height={150}
+                />
                 <Box
                   sx={{
                     textAlign: "center",
                     "&>p": { fontSize: "13px", fontWeight: 500 },
                   }}
                 >
-                  <Typography variant="body1" color="initial" sx={{ color: 'white', fontWeight: "600" }}>
+                  <Typography
+                    variant="body1"
+                    color="initial"
+                    sx={{ color: "white", fontWeight: "600" }}
+                  >
                     {series}%
                   </Typography>
-                  <Typography variant="body1" color="initial" sx={{ color: 'white', fontWeight: "600" }}>
+                  <Typography
+                    variant="body1"
+                    color="initial"
+                    sx={{ color: "white", fontWeight: "600" }}
+                  >
                     Bonus Amount
                   </Typography>
                 </Box>
               </Box>
-              <Box sx={{ width: "50%", position: 'relative' }}>
-                <Typography variant="body1" color="initial" sx={{
-                  position: 'absolute',
-                  color: 'white',
-                  left: '39%',
-                  top: '32%',
-                  fontSize: '15px',
-                  fontWeight: '700',
-                }}>{series}%</Typography>
-                <ReactApexChart options={options} series={series} type="radialBar" height={150} />
+              <Box sx={{ width: "50%", position: "relative" }}>
+                <Typography
+                  variant="body1"
+                  color="initial"
+                  sx={{
+                    position: "absolute",
+                    color: "white",
+                    left: "39%",
+                    top: "32%",
+                    fontSize: "15px",
+                    fontWeight: "700",
+                  }}
+                >
+                  {series2}%
+                </Typography>
+                <ReactApexChart
+                  options={options}
+                  series={series2}
+                  type="radialBar"
+                  height={150}
+                />
                 <Box
                   sx={{
                     textAlign: "center",
                     "&>p": { fontSize: "13px", fontWeight: 500 },
                   }}
                 >
-                  <Typography variant="body1" color="initial" sx={{ color: 'white', fontWeight: "600" }}>
-                    {series}%
+                  <Typography
+                    variant="body1"
+                    color="initial"
+                    sx={{ color: "white", fontWeight: "600" }}
+                  >
+                    {series2}%
                   </Typography>
-                  <Typography variant="body1" color="initial" sx={{ color: 'white', fontWeight: "600" }}>
+                  <Typography
+                    variant="body1"
+                    color="initial"
+                    sx={{ color: "white", fontWeight: "600" }}
+                  >
                     Winning Amount
                   </Typography>
                 </Box>
@@ -398,10 +460,10 @@ function Wallet() {
               justifyContent: "space-between",
               alignItems: "baseline",
               backgroundImage: `url(${bgms})`,
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: '100% 100%',
-              borderRadius: '10px',
-              padding: '40px 10px',
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "100% 100%",
+              borderRadius: "10px",
+              padding: "40px 10px",
               mt: 3,
             }}
           >
@@ -415,7 +477,7 @@ function Wallet() {
 
                 "&>a>p": {
                   fontSize: "12px",
-                  color: 'black',
+                  color: "black",
                   fontWeight: 600,
                   textAlign: "center",
                 },
@@ -424,9 +486,7 @@ function Wallet() {
                 mt: "30px",
               }}
             >
-              <NavLink
-                to="/wallet/Recharge"
-              >
+              <NavLink to="/wallet/Recharge">
                 <Box component="img" src={rechargeIcon} width={50}></Box>
                 <Typography variant="body1" color="initial" mt={1}>
                   Deposit
@@ -442,7 +502,7 @@ function Wallet() {
                 justifyContent: "center",
                 "&>a>p": {
                   fontSize: "12px",
-                  color: 'black',
+                  color: "black",
                   fontWeight: 600,
                   textAlign: "center",
                 },
@@ -450,9 +510,7 @@ function Wallet() {
                 "&>a>img": { margin: "auto" },
               }}
             >
-              <NavLink
-                to="/Withdrawal"
-              >
+              <NavLink to="/Withdrawal">
                 <Box component="img" src={withdrow} width={50}></Box>
                 <Typography variant="body1" color="initial" mt={1}>
                   Withdraw
@@ -468,7 +526,7 @@ function Wallet() {
                 justifyContent: "center",
                 "&>a>p": {
                   fontSize: "12px",
-                  color: 'black',
+                  color: "black",
                   fontWeight: 600,
                   textAlign: "center",
                 },
@@ -493,7 +551,7 @@ function Wallet() {
                 justifyContent: "center",
                 "&>a>p": {
                   fontSize: "12px",
-                  color: 'black',
+                  color: "black",
                   fontWeight: 600,
                   textAlign: "center",
                 },
@@ -527,7 +585,7 @@ function Wallet() {
                 0.000
               </Typography>
               <Typography variant="body1" color="initial">
-                SNL
+                RT
               </Typography>
             </Box>
           </Box>
@@ -537,7 +595,7 @@ function Wallet() {
                 0.000
               </Typography>
               <Typography variant="body1" color="initial">
-                SNL
+                RT
               </Typography>
             </Box>
           </Box>
@@ -547,7 +605,7 @@ function Wallet() {
                 0.000
               </Typography>
               <Typography variant="body1" color="initial">
-                SNL
+                RT
               </Typography>
             </Box>
           </Box>
@@ -557,7 +615,7 @@ function Wallet() {
                 0.000
               </Typography>
               <Typography variant="body1" color="initial">
-                SNL
+                RT
               </Typography>
             </Box>
           </Box>
@@ -567,7 +625,7 @@ function Wallet() {
                 0.000
               </Typography>
               <Typography variant="body1" color="initial">
-                SNL
+                RT
               </Typography>
             </Box>
           </Box>
@@ -577,13 +635,16 @@ function Wallet() {
                 0.000
               </Typography>
               <Typography variant="body1" color="initial">
-                SNL
+                RT
               </Typography>
             </Box>
           </Box>
         </Box>
         {openDialogBoxHomeBanner && (
-          <Dialog PaperProps={{ width: "500px", height: "500px" }} open={openDialogBoxHomeBanner}>
+          <Dialog
+            PaperProps={{ width: "500px", height: "500px" }}
+            open={openDialogBoxHomeBanner}
+          >
             <div>
               <p>
                 <IconButton onClick={() => setopenDialogBoxHomeBanner(false)}>
@@ -632,6 +693,6 @@ const style = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    "&>div>p": { color: 'white', fontWeight: 600, },
+    "&>div>p": { color: "white", fontWeight: 600 },
   },
 };
