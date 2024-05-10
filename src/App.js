@@ -7,6 +7,8 @@ import Login from "./pages/auth/login/Login";
 import Register from "./pages/auth/register/Register";
 import ForgetPassword from "./pages/auth/login/ForgetPassword";
 import CryptoJS from "crypto-js";
+import { MypromotionDataFn } from "./services/apicalling";
+import { useQuery } from "react-query";
 
 const App = () => {
   const isAuthenticated =

@@ -1,6 +1,6 @@
 export const rupees = "₹";
 
-export const baseUrl = "https://admin.sunlottery.fun";
+export const baseUrl = "https://admin.righttime.fun";
 
 // export const fron_end_main_domain = "https://sunlottery.fun";
 export const fron_end_main_domain = "https://righttime.fun";
