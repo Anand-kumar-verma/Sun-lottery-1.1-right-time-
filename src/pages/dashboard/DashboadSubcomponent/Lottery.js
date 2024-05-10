@@ -4,13 +4,14 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { zubgback, zubgbackgrad, zubgmid, zubgshadow, zubgtext, zubgwhite } from "../../../Shared/color";
 import go from "../../../assets/images/go.png";
 import scr1 from '../../../assets/images/src1.png';
+import wingobg from '../../../assets/images/wingo1.png';
 import scr2 from '../../../assets/images/src2.png';
 import scr3 from '../../../assets/images/src3.png';
 import scr4 from '../../../assets/images/src4.png';
-import epicWin from "../../../assets/images/win1/epicWin.jpg";
-import jackpot from "../../../assets/images/win1/jackpot.jpg";
-import kind from "../../../assets/images/win1/kind.jpg";
-import megawin from "../../../assets/images/win1/megawin.jpg";
+import epicWin from "../../../assets/images/psd1 (2).png";
+import jackpot from "../../../assets/images/psd1 (2).png";
+import kind from "../../../assets/images/psd1 (2).png";
+import megawin from "../../../assets/images/psd1 (2).png";
 import toast from "react-hot-toast";
 
 
@@ -26,7 +27,7 @@ const Lottery = () => {
             <Box sx={{
               position: 'absolute', top: 0, left: '0', width: '100%', height: '100%', borderRadius: '10px 0px 0px 10px',
             }}>
-              <Box component='img' src={scr1} sx={{ width: '100%', height: '100%', borderRadius: '10px 0px 0px 10px', opacity: '0.2' }}></Box>
+              <Box component='img' src={wingobg} sx={{ width: '100%', height: '100%', borderRadius: '10px 0px 0px 10px', }}></Box>
             </Box>
             <Box sx={style.titleBox}>
               <Box>
@@ -36,9 +37,6 @@ const Lottery = () => {
                 <Typography variant="body1" color="initial" sx={style.textone}>
                   Guess Number Green/Red/Voilet to win
                 </Typography>
-              </Box>
-              <Box>
-                <Box component="img" width={65} src={go}></Box>
               </Box>
             </Box>
           </Box>
@@ -51,7 +49,7 @@ const Lottery = () => {
             <Box sx={{
               position: 'absolute', top: 0, left: '0', width: '100%', height: '100%', borderRadius: '10px 0px 0px 10px',
             }}>
-              <Box component='img' src={scr2} sx={{ width: '100%', height: '100%', borderRadius: '10px 0px 0px 10px', opacity: '0.2' }}></Box>
+              <Box component='img' src={wingobg} sx={{ width: '100%', height: '100%', borderRadius: '10px 0px 0px 10px', }}></Box>
             </Box>
             <Box sx={style.titleBox}>
               <Box>
@@ -61,9 +59,6 @@ const Lottery = () => {
                 <Typography variant="body1" color="initial" sx={style.textone}>
                   Guess Number Big /Small / Odd/ Even
                 </Typography>
-              </Box>
-              <Box>
-                <Box component="img" width={65} src={go}></Box>
               </Box>
             </Box>
           </Box>
@@ -76,7 +71,7 @@ const Lottery = () => {
             <Box sx={{
               position: 'absolute', top: 0, left: '0', width: '100%', height: '100%', borderRadius: '10px 0px 0px 10px',
             }}>
-              <Box component='img' src={scr3} sx={{ width: '100%', height: '100%', borderRadius: '10px 0px 0px 10px', opacity: '0.2' }}></Box>
+              <Box component='img' src={wingobg} sx={{ width: '100%', height: '100%', borderRadius: '10px 0px 0px 10px', }}></Box>
             </Box>
             <Box sx={style.titleBox}>
               <Box>
@@ -86,9 +81,6 @@ const Lottery = () => {
                 <Typography variant="body1" color="initial" sx={style.textone}>
                   Guess Number Green/Red/Voilet to win
                 </Typography>
-              </Box>
-              <Box>
-                <Box component="img" width={65} src={go}></Box>
               </Box>
             </Box>
           </Box>
@@ -101,7 +93,7 @@ const Lottery = () => {
             <Box sx={{
               position: 'absolute', top: 0, left: '0', width: '100%', height: '100%', borderRadius: '10px 0px 0px 10px',
             }}>
-              <Box component='img' src={scr4} sx={{ width: '100%', height: '100%', borderRadius: '10px 0px 0px 10px', opacity: '0.2' }}></Box>
+              <Box component='img' src={wingobg} sx={{ width: '100%', height: '100%', borderRadius: '10px 0px 0px 10px', }}></Box>
             </Box>
             <Box sx={style.titleBox}>
               <Box>
@@ -111,9 +103,6 @@ const Lottery = () => {
                 <Typography variant="body1" color="initial" sx={style.textone}>
                   Guess Number Green/Red/Purple to win
                 </Typography>
-              </Box>
-              <Box>
-                <Box component="img" width={65} src={go}></Box>
               </Box>
             </Box>
           </Box>
@@ -141,7 +130,6 @@ const style = {
   roottwo: {
     width: "100%",
     height: "14vh",
-    background: zubgmid,
     borderRadius: "10px",
     display: "flex",
     alignItems: "center",
@@ -170,7 +158,7 @@ const style = {
     // "-webkit-background-clip": "text",
     // "-webkit-text-fill-color": "transparent",
   },
-  imgtwo: { width: "100%", height: "100%", borderRadius: "0px 10px 10px 0px" },
+  imgtwo: { width: "100%", height: "100%", borderRadius: "0px 10px 10px 0px", filter: 'brightness(0.5)', },
   imgone: { width: "100%", height: "100%", borderRadius: "0px 0px 0px 10px" },
   textone: { color: "white", fontSize: "13px" },
   texttow: { color: "white", fontSize: "10px", mr: "5px" },

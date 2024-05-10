@@ -72,7 +72,6 @@ img {
 .loginlabel>h3 {
   font-size: 15px;
   font-weight: 500;
-  color: white;
 }
 
 .loginfields>div>input {
@@ -123,7 +122,6 @@ img {
   font-weight: 600 !important;
   text-transform: capitalize !important;
   border-radius: 5px !important;
-  color: white !important;
   padding: 10px 30px !important;
 }
 
@@ -565,7 +563,7 @@ img {
 }
 
 .greemred {
-  background: #FE0000 !important;
+  background: #E71D1E !important;
   color: white !important;
   text-transform: capitalize !important;
 }
@@ -647,7 +645,7 @@ img {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: red;
+  background-color: #E71D1E;
 }
 
 .WincircleTwo {
@@ -761,7 +759,7 @@ img {
 .charttableheadingBox {
   border-bottom: 1px solid white !important;
   padding: 10px 0px;
-  background: red;
+  background: #E71D1E;
 }
 
 .circleNumberbody {
@@ -1424,7 +1422,7 @@ img {
 .offline-indicator {
   width: 20px;
   height: 20px;
-  background-color: red;
+  background-color: #E71D1E;
   border-radius: 50%;
   animation: blink 1s infinite;
 }

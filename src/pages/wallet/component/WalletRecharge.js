@@ -743,7 +743,7 @@ function WalletRecharge() {
               ) : (
                 <div style={style.paytmbtntwo} className="mt-5">
                   <div className="flex w-full justify-between items-center">
-                    <span>{fk.values.all_data?.t_id}</span>
+                    <span style={{ color: 'white' }}>{fk.values.all_data?.t_id}</span>
                     <div>
                       <Button
                         variant="contained"
@@ -753,31 +753,31 @@ function WalletRecharge() {
                       >
                         Pay Now
                       </Button>
-                      <span>
+                      <span style={{ color: 'white' }}>
                         {" "}
                         {show_time.split("_")?.[0]}:
                         {show_time.split("_")?.[1]?.padEnd(2, "0")}
                       </span>
                     </div>
-                    <span>
+                    <span style={{ color: 'white' }}>
                       {" "}
                       {rupees} {fk.values.all_data?.amount}
                     </span>
                   </div>
                   <div className="!h-[1px] w-full !bg-red-500 !mt-2"></div>
                   <div className="flex w-full justify-between !text-[15px]">
-                    <span>Status</span>
-                    <span className="!text-red-600 ">Pending</span>
+                    <span style={{ color: 'white' }}>Status</span>
+                    <span style={{ color: 'white' }}>Pending</span>
                   </div>
                   <div className="flex w-full justify-between !text-[12px]">
-                    <span>Date</span>
-                    <span>
+                    <span style={{ color: 'white' }}>Date</span>
+                    <span style={{ color: 'white' }}>
                       {moment(fk.values.all_data?.date).format("DD-MM-YYYY")}
                     </span>
                   </div>
                   <div className="flex w-full justify-between !text-[12px]">
-                    <span>Time</span>
-                    <span>
+                    <span style={{ color: 'white' }}>Time</span>
+                    <span style={{ color: 'white' }}>
                       {moment(fk.values.all_data?.date).format("HH:mm:ss")}
                     </span>
                   </div>

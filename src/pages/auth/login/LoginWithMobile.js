@@ -218,6 +218,7 @@ function LoginWithMobile() {
           className="btnregister"
           mt={2}
           to="/register"
+          sx={{ color: zubgtext }}
         >
           Register
         </Button>

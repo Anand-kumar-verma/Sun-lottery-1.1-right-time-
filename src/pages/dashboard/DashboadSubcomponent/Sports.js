@@ -2,9 +2,10 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { zubgback, zubgbackgrad, zubgmid, zubgshadow, zubgwhite } from "../../../Shared/color";
-import kind from "../../../assets/images/crick2.png";
+import kind from "../../../assets/images/psd1 (2).png";
 import Crickback from "../../../assets/images/crickback.png";
 import go from "../../../assets/images/go.png";
+import wingobg from '../../../assets/images/wingo1.png';
 
 
 const Original = () => {
@@ -19,16 +20,13 @@ const Original = () => {
             <Box sx={{
               position: 'absolute', top: 0, left: '0', width: '100%', height: '100%', borderRadius: '10px 0px 0px 10px',
             }}>
-              <Box component='img' src={Crickback} sx={{ width: '100%', height: '100%', borderRadius: '10px 0px 0px 10px', opacity: '0.4' }}></Box>
+              <Box component='img' src={wingobg} sx={{ width: '100%', height: '100%', borderRadius: '10px 0px 0px 10px', }}></Box>
             </Box>
             <Box sx={style.titleBox}>
               <Box>
                 <Typography variant="body1" color="initial" sx={style.title} className="!text-4xl">
                   Cricket
                 </Typography>
-              </Box>
-              <Box>
-                <Box component="img" width={65} src={go}></Box>
               </Box>
             </Box>
           </Box>
@@ -83,7 +81,7 @@ const style = {
     fontFamily: "Trade Winds !important",
 
   },
-  imgtwo: { width: "100%", height: "100%", borderRadius: "0px 10px 10px 0px" },
+  imgtwo: { width: "100%", height: "100%", borderRadius: "0px 10px 10px 0px", filter: 'brightness(0.5)', },
   imgone: { width: "100%", height: "100%", borderRadius: "0px 0px 0px 10px" },
   textone: { color: "white", fontSize: "13px" },
   texttow: { color: "white", fontSize: "10px", mr: "5px" },

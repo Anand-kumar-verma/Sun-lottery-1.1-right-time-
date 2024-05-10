@@ -390,6 +390,7 @@ function Register() {
                   to="/"
                   className="btnregister"
                   mt={2}
+                  sx={{ color: zubgtext }}
                 >
                   Log in
                 </Button>

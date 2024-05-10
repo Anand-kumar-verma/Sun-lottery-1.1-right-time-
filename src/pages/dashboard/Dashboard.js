@@ -346,7 +346,7 @@ function Dashboard() {
                 ? [1, 2]?.map((i) => {
                   return (
                     <SwiperSlide>
-                      <CircularProgress className="!text-#F02257" />
+                      <CircularProgress className="!text-#E71D1E" />
                     </SwiperSlide>
                   );
                 })
@@ -359,11 +359,11 @@ function Dashboard() {
                             <Avatar alt="Remy Sharp" sizes="large">
                               {i?.full_name?.substring(0, 1) || ""}
                             </Avatar>
-                            <p className=" !text-#F02257 !text-lg !#F02257space-nowrap">
+                            <p className=" !text-#E71D1E !text-lg !#E71D1Espace-nowrap">
                               {i?.full_name || ""}
                             </p>
                           </div>
-                          <p className=" !text-#F02257">
+                          <p className=" !text-#E71D1E">
                             Withdraw {rupees}{" "}
                             <spna className={"!font-bold !text-[#FB8356]"}>
                               {Number(i?.amount || 0).toFixed(2)}
@@ -571,7 +571,7 @@ function Dashboard() {
           </Box>
           {loding ? (
             <div className="w-[100%] flex justify-center">
-              <CircularProgress className="!text-#F02257" />
+              <CircularProgress className="!text-#E71D1E" />
             </div>
           ) : (
             <Box sx={styles.wininfoouter}>
@@ -718,7 +718,7 @@ function Dashboard() {
           {loding ? (
             <div className="w-[100%] flex justify-center">
               {" "}
-              <CircularProgress className="!text-#F02257" />
+              <CircularProgress className="!text-#E71D1E" />
             </div>
           ) : (
             <Box sx={{ ...styles.wininfoouter, mb: "40px" }}>
@@ -776,8 +776,8 @@ function Dashboard() {
               })}
             </Box>
           )}
-          {/*  */}
-          {poicy && !lodingBanner && (
+
+          {/* {poicy && !lodingBanner && (
             <Dialog
               open={poicy}
               TransitionComponent={Transition}
@@ -800,14 +800,13 @@ function Dashboard() {
                     <p style={{ color: 'white', fontSize: "14px" }}>
                       Notification
                     </p>
-                  ))}{" "}
+                  ))}
                 <RxCross2
                   style={{ color: 'white' }}
                   onClick={handleClosepolicy}
                 />
               </div>
               <DialogContent style={{ background: zubgback }}>
-                {/*  */}
                 {openbannerurl === "https://admin.sunlottery.fun" ||
                   openbannerurl === "" ? (
                   <Notification handleClosepolicy={handleClosepolicy} />
@@ -816,7 +815,7 @@ function Dashboard() {
                 )}
               </DialogContent>
             </Dialog>
-          )}
+          )} */}
 
           {/* {poicy && (
             <Dialog
@@ -860,7 +859,7 @@ const styles = {
   root: { background: "#F6F7FE", pb: 6 },
   dashboardTitle: {
     textAlign: "center",
-    color: "#F02257 !important",
+    color: "#E71D1E !important",
     fontSize: "21px",
     fontWeight: "500",
   },
@@ -942,13 +941,13 @@ const styles = {
   gameTitle: {
     fontSize: "22px",
     fontWeight: "600",
-    color: "#F02257 !important",
+    color: "#E71D1E !important",
     transition: "all 0.3s",
   },
   gameDescription: {
     fontSize: "15px",
     fontWeight: "400",
-    color: "#F02257 !important",
+    color: "#E71D1E !important",
     mt: 2,
     transition: "all 0.3s",
   },
@@ -1033,7 +1032,7 @@ const styles = {
       width: "80px",
       height: "40px",
       borderRadius: "10px",
-      border: "1px solid #F02257",
+      border: "1px solid #E71D1E",
       marginRight: "5px",
     },
     "&>div>p:nth-child(1)": {
