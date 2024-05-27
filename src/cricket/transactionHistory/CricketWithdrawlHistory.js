@@ -40,7 +40,7 @@ function CricketWithdrawlHistory() {
       refetchOnReconnect: true,
     }
   );
-  const res = data?.data?.data?.filter((i)=>i?.tr15_depo_type === "Cricket")
+  const res = data?.data?.data?.filter((i)=>i?.type === "Cricket")
   return (
     <Layout footer={false}>
       <Container
@@ -121,7 +121,7 @@ function CricketWithdrawlHistory() {
                       <Button
                         sx={{ color: "white", textTransform: "capitalize" }}
                       >
-                        {i?.tr15_status}
+                        {i?.status}
                       </Button>
                       <IconButton>
                         <ArrowForwardIcon sx={{ color: "white" }} />
@@ -142,7 +142,7 @@ function CricketWithdrawlHistory() {
                       Balance
                     </Typography>
                     <Typography variant="body1" color="initial">
-                      ₹ {i?.tr15_amt}
+                      ₹ {i?.amount}
                     </Typography>
                   </Stack>
                   <Stack
@@ -158,8 +158,8 @@ function CricketWithdrawlHistory() {
                       Date/Time
                     </Typography>
                     <Typography variant="body1" color="initial">
-                      {moment(i?.tr15_date)?.format("DD-MM-YYYY")}{" "}
-                      {moment(i?.tr15_date)?.format("HH:mm:ss")}
+                      {moment(i?.date)?.format("DD-MM-YYYY")}{" "}
+                      {moment(i?.date)?.format("HH:mm:ss")}
                     </Typography>
                   </Stack>
                   <Stack
@@ -175,10 +175,10 @@ function CricketWithdrawlHistory() {
                       Status
                     </Typography>
                     <Typography variant="body1" color="initial">
-                      {i?.tr15_status}{" "}
+                      {i?.status}{" "}
                     </Typography>
                   </Stack>
-                  <Stack
+                  {i?.approve_date !== null && i?.approve_date !== "" &&<Stack
                     direction="row"
                     sx={{
                       mb: "10px",
@@ -191,10 +191,10 @@ function CricketWithdrawlHistory() {
                       Success Date/Time
                     </Typography>
                     <Typography variant="body1" color="initial">
-                      {moment(i?.success_date)?.format("DD-MM-YYYY")}{" "}
-                      {moment(i?.success_date)?.format("HH:mm:ss")}
+                      {moment(i?.approve_date)?.format("DD-MM-YYYY")}{" "}
+                      {moment(i?.approve_date)?.format("HH:mm:ss")}
                     </Typography>
-                  </Stack>
+                  </Stack>}
                   <Stack
                     direction="row"
                     sx={{
@@ -217,7 +217,7 @@ function CricketWithdrawlHistory() {
                       }}
                     >
                       <Typography variant="body1" color="initial">
-                        {i?.tr15_trans}
+                        {i?.tran_id}
                       </Typography>
                       <IconButton>
                         <ContentCopyIcon sx={{ color: "white" }} />

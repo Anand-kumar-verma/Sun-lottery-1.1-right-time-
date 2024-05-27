@@ -140,9 +140,9 @@ function Withdrawl() {
       fd.append("Mobile", data?.mobile);
       fd.append("user_id", user_id);
 
-      return toast(
-        "We are upgrading for smooth and fast payout please wait..."
-      );
+      // return toast(
+      //   "We are upgrading for smooth and fast payout please wait..."
+      // );
 
       Number(first_rechange) === 1
         ? withdraw_payment_Function(fd)
@@ -154,6 +154,7 @@ function Withdrawl() {
     setloding(true);
     try {
       const response = await axios.post(`${endpoint.withdraw_payment}`, fd);
+    console.log(response,"aanandn");
 
       if (response?.data?.msg === "Successfully Data Found") {
         walletamountFn();

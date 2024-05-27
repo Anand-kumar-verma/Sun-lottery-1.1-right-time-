@@ -20,7 +20,14 @@ import toast from "react-hot-toast";
 import { NavLink, useNavigate } from "react-router-dom";
 import CustomCircularProgress from "../../../Shared/CustomCircularProgress";
 import { cashDepositRequestValidationSchema } from "../../../Shared/Validation";
-import { zubgback, zubgbackgrad, zubgmid, zubgshadow, zubgtext, zubgwhite } from "../../../Shared/color";
+import {
+  zubgback,
+  zubgbackgrad,
+  zubgmid,
+  zubgshadow,
+  zubgtext,
+  zubgwhite,
+} from "../../../Shared/color";
 import audiovoice from "../../../assets/bankvoice.mp3";
 import cip from "../../../assets/cip.png";
 import dot from "../../../assets/images/circle-arrow.png";
@@ -35,7 +42,6 @@ import QRScreen from "./QRScreen";
 import { useDispatch, useSelector } from "react-redux";
 import { get_user_data_fn } from "../../../services/apicalling";
 import CryptoJS from "crypto-js";
-
 
 function WalletRecharge() {
   const [t_id, setT_id] = React.useState();
@@ -173,12 +179,13 @@ function WalletRecharge() {
     }
     try {
       const res = await axios.post(`${endpoint.payment_request}`, fdata);
-      const qr_url = JSON.parse(res?.data?.data)?.payment_link || "";
+      const qr_url = res?.data?.data && JSON.parse(res?.data?.data)?.payment_link || "";
       // const qr_url = JSON.parse(res?.data?.data) || "";
+      console.log(res);
       if (qr_url) {
         setDeposit_req_data(qr_url);
       } else {
-        toast("Something went wrong");
+        res?.data?.msg ? toast(res?.data?.msg) : toast("Something went wrong");
       }
     } catch (e) {
       console.log(e);
@@ -448,10 +455,15 @@ function WalletRecharge() {
             }}
           ></Box>
           <Stack direction="row" sx={{ alignItems: "center" }}>
-            <Box component="img" src={balance} width={50} sx={{
-              position: 'relative',
-              zIndex: 10,
-            }}></Box>
+            <Box
+              component="img"
+              src={balance}
+              width={50}
+              sx={{
+                position: "relative",
+                zIndex: 10,
+              }}
+            ></Box>
             <Typography
               variant="body1"
               color="initial"
@@ -460,7 +472,7 @@ function WalletRecharge() {
                 fontWeight: 500,
                 color: "white",
                 ml: "10px",
-                position: 'relative',
+                position: "relative",
                 zIndex: 10,
               }}
             >
@@ -468,10 +480,15 @@ function WalletRecharge() {
               Balance
             </Typography>
           </Stack>
-          <Stack direction="row" sx={{
-            alignItems: "center", mt: "10px", position: 'relative',
-            zIndex: 10,
-          }}>
+          <Stack
+            direction="row"
+            sx={{
+              alignItems: "center",
+              mt: "10px",
+              position: "relative",
+              zIndex: 10,
+            }}
+          >
             <Typography
               variant="body1"
               color="initial"
@@ -480,7 +497,7 @@ function WalletRecharge() {
                 fontWeight: "600",
                 color: "white",
                 mr: "10px",
-                position: 'relative',
+                position: "relative",
                 zIndex: 10,
               }}
             >
@@ -489,13 +506,16 @@ function WalletRecharge() {
               {deposit_amount
                 ? Number(amount?.cricket_wallet || 0)?.toFixed(2)
                 : Number(
-                  Number(amount?.wallet || 0) + Number(amount?.winning || 0)
-                )?.toFixed(2)}
+                    Number(amount?.wallet || 0) + Number(amount?.winning || 0)
+                  )?.toFixed(2)}
             </Typography>
-            <CachedIcon sx={{
-              color: "white", position: 'relative',
-              zIndex: 10,
-            }} />
+            <CachedIcon
+              sx={{
+                color: "white",
+                position: "relative",
+                zIndex: 10,
+              }}
+            />
           </Stack>
           <Stack
             direction="row"
@@ -503,7 +523,7 @@ function WalletRecharge() {
               alignItems: "center",
               justifyContent: "space-between",
               mt: "20px",
-              position: 'relative',
+              position: "relative",
               zIndex: 10,
             }}
           >
@@ -512,7 +532,10 @@ function WalletRecharge() {
               variant="body1"
               color="initial"
               sx={{
-                fontSize: "14px ", color: "white", ml: "10px", position: 'relative',
+                fontSize: "14px ",
+                color: "white",
+                ml: "10px",
+                position: "relative",
                 zIndex: 10,
               }}
             >
@@ -743,7 +766,9 @@ function WalletRecharge() {
               ) : (
                 <div style={style.paytmbtntwo} className="mt-5">
                   <div className="flex w-full justify-between items-center">
-                    <span style={{ color: 'white' }}>{fk.values.all_data?.t_id}</span>
+                    <span style={{ color: "white" }}>
+                      {fk.values.all_data?.t_id}
+                    </span>
                     <div>
                       <Button
                         variant="contained"
@@ -753,31 +778,31 @@ function WalletRecharge() {
                       >
                         Pay Now
                       </Button>
-                      <span style={{ color: 'white' }}>
+                      <span style={{ color: "white" }}>
                         {" "}
                         {show_time.split("_")?.[0]}:
                         {show_time.split("_")?.[1]?.padEnd(2, "0")}
                       </span>
                     </div>
-                    <span style={{ color: 'white' }}>
+                    <span style={{ color: "white" }}>
                       {" "}
                       {rupees} {fk.values.all_data?.amount}
                     </span>
                   </div>
                   <div className="!h-[1px] w-full !bg-red-500 !mt-2"></div>
                   <div className="flex w-full justify-between !text-[15px]">
-                    <span style={{ color: 'white' }}>Status</span>
-                    <span style={{ color: 'white' }}>Pending</span>
+                    <span style={{ color: "white" }}>Status</span>
+                    <span style={{ color: "white" }}>Pending</span>
                   </div>
                   <div className="flex w-full justify-between !text-[12px]">
-                    <span style={{ color: 'white' }}>Date</span>
-                    <span style={{ color: 'white' }}>
+                    <span style={{ color: "white" }}>Date</span>
+                    <span style={{ color: "white" }}>
                       {moment(fk.values.all_data?.date).format("DD-MM-YYYY")}
                     </span>
                   </div>
                   <div className="flex w-full justify-between !text-[12px]">
-                    <span style={{ color: 'white' }}>Time</span>
-                    <span style={{ color: 'white' }}>
+                    <span style={{ color: "white" }}>Time</span>
+                    <span style={{ color: "white" }}>
                       {moment(fk.values.all_data?.date).format("HH:mm:ss")}
                     </span>
                   </div>
@@ -854,7 +879,7 @@ const style = {
     padding: "10px 0px",
     borderRadius: "10px",
     "&>p": {
-      color: 'white',
+      color: "white",
       fontSize: "12px",
       fontWeight: "500",
       textAlign: "center",
@@ -896,7 +921,9 @@ const style = {
     alignItems: "center",
     justifyContent: "start",
     "&>p": {
-      marginLeft: "10px", color: zubgtext, fontSize: "14px"
+      marginLeft: "10px",
+      color: zubgtext,
+      fontSize: "14px",
     },
   },
 };

@@ -35,7 +35,7 @@ function WithdravalHistory() {
     }
   );
 
-  const res = data?.data?.data?.filter((i) => i?.tr15_depo_type === "Winzo")
+  const res = data?.data?.data?.filter((i) => i?.type === "Winzo")
 
   return (
     <Layout>
@@ -117,12 +117,12 @@ function WithdravalHistory() {
                     <Box>
                       <Button
                         sx={{ color: "green", textTransform: "capitalize" }}
-                        className={`${i?.tr15_status === "Success"
+                        className={`${i?.status === "Success"
                           ? "!text-green-500"
                           : "!text-red-500"
                           }`}
                       >
-                        {i?.tr15_status}
+                        {i?.status}
                       </Button>
                       <IconButton>
                         <ArrowForwardIcon sx={{ color: zubgtext }} />
@@ -143,7 +143,7 @@ function WithdravalHistory() {
                       Balance
                     </Typography>
                     <Typography variant="body1" color="initial">
-                      ₹ {i?.tr15_amt}
+                      ₹ {i?.amount}
                     </Typography>
                   </Stack>
                   <Stack
@@ -159,8 +159,8 @@ function WithdravalHistory() {
                       Date/Time
                     </Typography>
                     <Typography variant="body1" color="initial">
-                      {moment(i?.tr15_date)?.format("DD-MM-YYYY")}{" "}
-                      {moment(i?.tr15_date)?.format("HH:mm:ss")}
+                      {moment(i?.date)?.format("DD-MM-YYYY")}{" "}
+                      {moment(i?.date)?.format("HH:mm:ss")}
                     </Typography>
                   </Stack>
                   <Stack
@@ -176,10 +176,10 @@ function WithdravalHistory() {
                       Status
                     </Typography>
                     <Typography variant="body1" color="initial">
-                      {i?.tr15_status}{" "}
+                      {i?.status}{" "}
                     </Typography>
                   </Stack>
-                  {i?.success_date !== "" && <Stack
+                  {i?.approve_date !== null && i?.approve_date !== "" && <Stack
                     direction="row"
                     sx={{
                       mb: "10px",
@@ -192,8 +192,8 @@ function WithdravalHistory() {
                       Success Date/Time
                     </Typography>
                     <Typography variant="body1" color="initial" className="!text-green-500">
-                      {moment(i?.success_date)?.format("DD-MM-YYYY")}{" "}
-                      {moment(i?.success_date)?.format("HH:mm:ss")}
+                      {moment(i?.approve_date)?.format("DD-MM-YYYY")}{" "}
+                      {moment(i?.approve_date)?.format("HH:mm:ss")}
                     </Typography>
                   </Stack>}
                   <Stack
@@ -218,7 +218,7 @@ function WithdravalHistory() {
                       }}
                     >
                       <Typography variant="body1" color="initial">
-                        {i?.tr15_trans}
+                        {i?.tran_id}
                       </Typography>
                       <IconButton>
                         <ContentCopyIcon sx={{ color: zubgtext }} />
